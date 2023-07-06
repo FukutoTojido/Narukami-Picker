@@ -126,6 +126,7 @@ const reducer = (state: ControllerState, action: Action) => {
             return { ...state };
         }
         case ACTION_TYPE.LOAD_MAPS: {
+            console.log(action.data);
             state.maps = action.data;
             return { ...state };
         }
@@ -149,7 +150,26 @@ const Controller = () => {
         onOpen: () => {
             console.log("WebSocket connected!");
         },
-        onMessage: (event) => {},
+        onMessage: (event) => {
+            const mes = JSON.parse(event.data);
+
+            switch (mes.type) {
+                case WS_SIGNALS.POST_RESULT: {
+                    console.log(JSON.parse(mes.data));
+                    const maps = JSON.parse(mes.data);
+                    const currentMap = controllerState.maps.map((map, idx) => {
+                        if (map.state === PHASE.NONE && maps[idx].state !== PHASE.NONE) map.state = maps[idx].state;
+                        return map;
+                    });
+
+                    controllerDispatcher({
+                        type: ACTION_TYPE.LOAD_MAPS,
+                        data: currentMap,
+                    });
+                    break;
+                }
+            }
+        },
         shouldReconnect: (closedEvent) => true,
     });
 
@@ -172,9 +192,9 @@ const Controller = () => {
     useEffect(() => {
         ws.sendJsonMessage({
             type: WS_SIGNALS.UPDATE_TEAM,
-            data: JSON.stringify(controllerState.team)
-        })
-    }, [controllerState.team.left, controllerState.team.right])
+            data: JSON.stringify(controllerState.team),
+        });
+    }, [controllerState.team.left, controllerState.team.right]);
 
     return (
         <>
@@ -305,11 +325,39 @@ const Controller = () => {
                                 <img src="/random.png" />
                                 Random Pick
                             </button>
-                            <button className={`${mm.className} ban`}>
+                            <button
+                                className={`${mm.className} ban`}
+                                onClick={() => {
+                                    const copied = controllerState.maps.map((map: MapState) => {
+                                        const copiedMap = { ...map };
+                                        if (copiedMap.state !== PHASE.BAN) copiedMap.state = PHASE.NONE;
+
+                                        return { ...copiedMap };
+                                    });
+
+                                    ws.sendJsonMessage({
+                                        type: WS_SIGNALS.UPDATE_MAPPOOL,
+                                        data: JSON.stringify(copied),
+                                    });
+                                }}
+                            >
                                 <img src="/ban.png" />
                                 Reveal Ban
                             </button>
-                            <button className={`${mm.className} pick`}>
+                            <button
+                                className={`${mm.className} pick`}
+                                onClick={() => {
+                                    ws.sendJsonMessage({
+                                        type: WS_SIGNALS.UPDATE_MAPPOOL,
+                                        data: JSON.stringify(
+                                            controllerState.maps.map((map: MapState) => {
+                                                if (map.state === PHASE.NONE) map.state = PHASE.LOCK;
+                                                return { ...map };
+                                            })
+                                        ),
+                                    });
+                                }}
+                            >
                                 <img src="/pick.png" />
                                 Reveal Pick
                             </button>
@@ -327,7 +375,7 @@ const Controller = () => {
                                             state: PHASE.NONE,
                                         };
 
-                                        return mapState
+                                        return mapState;
                                     });
                                     console.log(randomized);
 
@@ -338,8 +386,8 @@ const Controller = () => {
 
                                     ws.sendJsonMessage({
                                         type: WS_SIGNALS.SHUFFLE,
-                                        data: JSON.stringify(randomized)
-                                    })
+                                        data: JSON.stringify(randomized),
+                                    });
                                 }}
                             >
                                 <img src="/osu.png" />

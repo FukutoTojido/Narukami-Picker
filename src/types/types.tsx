@@ -7,6 +7,7 @@ enum PHASE {
     BAN = "BAN",
     PICK = "PICK",
     NONE = "NONE",
+    LOCK = "LOCK",
 }
 
 enum CHART_DIFF {
@@ -30,6 +31,7 @@ enum ACTION_TYPE {
     CHANGE_BAN_LIMIT,
     SWITCH_STATE,
     CHANGE_ROUND,
+    START_SIGNALING,
 }
 
 enum SIDE {
@@ -201,6 +203,10 @@ interface ChangeRound {
     data: number;
 }
 
+interface StartSignaling {
+    type: ACTION_TYPE.START_SIGNALING;
+}
+
 interface MapData {
     artist: string;
     catcode: string;
@@ -245,7 +251,8 @@ type Action =
     | SetTeam
     | ChangeBanLimit
     | SwitchState
-    | ChangeRound;
+    | ChangeRound
+    | StartSignaling;
 
 export type { MapState, MainState, Action, MappoolState, TeamName, ControllerState, FilteredMapData, User };
 export { VERSION, PHASE, CHART_DIFF, ACTION_TYPE, SIDE };

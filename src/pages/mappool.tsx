@@ -75,7 +75,8 @@ const Mappool = () => {
                     });
                     break;
                 }
-                case WS_SIGNALS.SHUFFLE: {
+                case WS_SIGNALS.SHUFFLE:
+                case WS_SIGNALS.UPDATE_MAPPOOL: {
                     const maps = JSON.parse(mes.data);
                     mappoolDispatcher({
                         type: ACTION_TYPE.UPDATE_MAPPOOL,

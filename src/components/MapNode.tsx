@@ -194,11 +194,13 @@ const MapNode = (props: { map: MapState | undefined }) => {
 
                     border: solid 4px transparent;
                     transition: ease-in-out 200ms;
+
+                    border-radius: 10px;
                 }
 
                 .state.BAN {
                     opacity: 1;
-                    background-color: rgba(0 0 0 / 0.5);
+                    background-color: rgba(0 0 0 / 0.8);
                     border-color: #f23a65;
                 }
 
@@ -209,7 +211,7 @@ const MapNode = (props: { map: MapState | undefined }) => {
 
                 .state.LOCK {
                     opacity: 1;
-                    background-color: rgba(0 0 0 / 0.5);
+                    background-color: rgba(0 0 0 / .8);
                 }
             `}</style>
         </div>
