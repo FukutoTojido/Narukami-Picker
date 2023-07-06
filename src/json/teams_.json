@@ -1,0 +1,1340 @@
+{
+    "teams": [
+        {
+            "id": "64934c4c45be10d13fe637c4",
+            "team_id": 1,
+            "name": "INTERNET",
+            "slug": "internet",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/2edadfe2a53f4d5b961fc5ce132822ab.png?1687109365855",
+            "leader": {
+                "id": "64a5a2cd8a184ad966102b0f",
+                "team": "64934c4c45be10d13fe637c4",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "648ba5c2b393d5cb3139e7ff",
+                    "user_id": 23,
+                    "username": "wintrrbriize",
+                    "avatar": "https://cdn.discordapp.com/avatars/419421436260777985/2efd1df5c7d8b7339c8dfdb560a3094e.png?size=1024",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "419421436260777985",
+                            "username": "wintrrbriize",
+                            "avatar": "https://cdn.discordapp.com/avatars/419421436260777985/2efd1df5c7d8b7339c8dfdb560a3094e.png?size=1024"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "０Ｖ３ＲＤ０Ｓ３",
+                            "rating": 14340,
+                            "rating_max": 14340,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_09eKhcbFNK.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                            "stars": 175,
+                            "title": "ミ　ー　テ　ィ　ア　ふ　り　か　け"
+                        }
+                    ],
+                    "registered_time": "2023-06-15T23:58:57.899Z",
+                    "last_login": "2023-06-30T16:39:39.796Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "０Ｖ３ＲＤ０Ｓ３",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/decbf97b16747ffa.png",
+                "rating": 14340,
+                "rating_max": 14340,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                "stars": 181,
+                "title": "ミ　ー　テ　ィ　ア　ふ　り　か　け",
+                "created_time": "2023-06-18T05:29:28.000Z",
+                "updated_time": "2023-06-18T05:29:28.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5a2cd8a184ad966102b0f",
+                    "team": "64934c4c45be10d13fe637c4",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648ba5c2b393d5cb3139e7ff",
+                        "user_id": 23,
+                        "username": "wintrrbriize",
+                        "avatar": "https://cdn.discordapp.com/avatars/419421436260777985/2efd1df5c7d8b7339c8dfdb560a3094e.png?size=1024",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "419421436260777985",
+                                "username": "wintrrbriize",
+                                "avatar": "https://cdn.discordapp.com/avatars/419421436260777985/2efd1df5c7d8b7339c8dfdb560a3094e.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "０Ｖ３ＲＤ０Ｓ３",
+                                "rating": 14340,
+                                "rating_max": 14340,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_09eKhcbFNK.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                                "stars": 175,
+                                "title": "ミ　ー　テ　ィ　ア　ふ　り　か　け"
+                            }
+                        ],
+                        "registered_time": "2023-06-15T23:58:57.899Z",
+                        "last_login": "2023-06-30T16:39:39.796Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "０Ｖ３ＲＤ０Ｓ３",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/decbf97b16747ffa.png",
+                    "rating": 14340,
+                    "rating_max": 14340,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                    "stars": 181,
+                    "title": "ミ　ー　テ　ィ　ア　ふ　り　か　け",
+                    "created_time": "2023-06-18T05:29:28.000Z",
+                    "updated_time": "2023-06-18T05:29:28.000Z"
+                },
+                {
+                    "id": "64a5a4708a184ad966102b21",
+                    "team": "64934c4c45be10d13fe637c4",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648b2a5db393d5cb3139e5dd",
+                        "user_id": 14,
+                        "username": "cimpheroxu",
+                        "avatar": "https://cdn.discordapp.com/avatars/497745723123695626/22fa23a17fd5acd40d2a96de40e58dd1.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "497745723123695626",
+                                "username": "cimpheroxu#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/497745723123695626/22fa23a17fd5acd40d2a96de40e58dd1.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｙ４Ｍ３Ｒ０",
+                                "rating": 13587,
+                                "rating_max": 13587,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_01VFe8gl5z.png",
+                                "stars": 133,
+                                "title": "つあメン覚醒電鉄　快速"
+                            }
+                        ],
+                        "registered_time": "2023-06-15T15:12:29.022Z",
+                        "last_login": "2023-06-15T15:12:29.022Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｙ４Ｍ３Ｒ０",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/a6315ab9cda5fee8.png",
+                    "rating": 13587,
+                    "rating_max": 13587,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_01VFe8gl5z.png",
+                    "stars": 137,
+                    "title": "つあメン覚醒電鉄　快速",
+                    "created_time": "2023-06-18T05:29:28.000Z",
+                    "updated_time": "2023-06-18T05:29:28.000Z"
+                }
+            ],
+            "average_rating": 13963.5,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1121160339443171358",
+            "created_time": "2023-06-18T05:29:28.000Z",
+            "updated_time": "2023-06-18T05:29:28.000Z"
+        },
+        {
+            "id": "64934dd345be10d13fe637c5",
+            "team_id": 2,
+            "name": "plan B",
+            "slug": "plan-b",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/3667640f2fa1441d7e50acc9a8eddb92.png?1687387367859",
+            "leader": {
+                "id": "64a5a50d8a184ad966102b22",
+                "team": "64934dd345be10d13fe637c5",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "6492e6501f918502fb3201dd",
+                    "user_id": 33,
+                    "username": "baoketban123",
+                    "avatar": "https://cdn.discordapp.com/avatars/429574228111654912/9fd354970bf7e2ce79c4c1065ce561b0.webp",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "429574228111654912",
+                            "username": "baoketban123#0",
+                            "avatar": "https://cdn.discordapp.com/avatars/429574228111654912/9fd354970bf7e2ce79c4c1065ce561b0.webp"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "ＦＲＯＳＴＬＦ",
+                            "rating": 14738,
+                            "rating_max": 14738,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                            "stars": 217,
+                            "title": "あ"
+                        }
+                    ],
+                    "registered_time": "2023-06-21T12:00:16.223Z",
+                    "last_login": "2023-06-21T12:00:16.223Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "ＦＲＯＳＴＬＦ",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/d3828814adfec8fe.png",
+                "rating": 14738,
+                "rating_max": 14738,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                "stars": 218,
+                "title": "あ",
+                "created_time": "2023-06-21T10:42:50.000Z",
+                "updated_time": "2023-06-21T10:42:50.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5a50d8a184ad966102b22",
+                    "team": "64934dd345be10d13fe637c5",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "6492e6501f918502fb3201dd",
+                        "user_id": 33,
+                        "username": "baoketban123",
+                        "avatar": "https://cdn.discordapp.com/avatars/429574228111654912/9fd354970bf7e2ce79c4c1065ce561b0.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "429574228111654912",
+                                "username": "baoketban123#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/429574228111654912/9fd354970bf7e2ce79c4c1065ce561b0.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "ＦＲＯＳＴＬＦ",
+                                "rating": 14738,
+                                "rating_max": 14738,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                                "stars": 217,
+                                "title": "あ"
+                            }
+                        ],
+                        "registered_time": "2023-06-21T12:00:16.223Z",
+                        "last_login": "2023-06-21T12:00:16.223Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "ＦＲＯＳＴＬＦ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/d3828814adfec8fe.png",
+                    "rating": 14738,
+                    "rating_max": 14738,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                    "stars": 218,
+                    "title": "あ",
+                    "created_time": "2023-06-21T10:42:50.000Z",
+                    "updated_time": "2023-06-21T10:42:50.000Z"
+                },
+                {
+                    "id": "64a5a5278a184ad966102b23",
+                    "team": "64934dd345be10d13fe637c5",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "64946210b3036cda5551321f",
+                        "user_id": 35,
+                        "username": "fenestrox",
+                        "avatar": "https://cdn.discordapp.com/avatars/1076213352671498333/9b5abfe890229ab5471f034f90917853.png?size=1024",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "1076213352671498333",
+                                "username": "fenestrox#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/1076213352671498333/9b5abfe890229ab5471f034f90917853.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "☆Ｆｅｎｅｓ☆",
+                                "rating": 13097,
+                                "rating_max": 13097,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_01VFe8gl5z.png",
+                                "stars": 59,
+                                "title": "つあメン覚醒電鉄　準急"
+                            }
+                        ],
+                        "registered_time": "2023-06-22T15:00:32.154Z",
+                        "last_login": "2023-06-22T15:00:32.154Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "☆Ｆｅｎｅｓ☆",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/806c39b49c5f5ac6.png",
+                    "rating": 13097,
+                    "rating_max": 13097,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_01VFe8gl5z.png",
+                    "stars": 59,
+                    "title": "つあメン覚醒電鉄　準急",
+                    "created_time": "2023-06-21T10:42:50.000Z",
+                    "updated_time": "2023-06-21T10:42:50.000Z"
+                }
+            ],
+            "average_rating": 13917.5,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1121160579961323560",
+            "created_time": "2023-06-21T10:42:50.000Z",
+            "updated_time": "2023-06-21T10:42:50.000Z"
+        },
+        {
+            "id": "64934e6945be10d13fe637c7",
+            "team_id": 3,
+            "name": "bulul akaivu",
+            "slug": "bulul-akaivu",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/9de545d8b47e9f461882a0bb6877045a.png?1687363444723",
+            "leader": {
+                "id": "64a5a86c8a184ad966102b2a",
+                "team": "64934e6945be10d13fe637c7",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "648f1f3db393d5cb3139eb01",
+                    "user_id": 30,
+                    "username": "atl4st",
+                    "avatar": "https://cdn.discordapp.com/avatars/361512109001146369/63375dea1d14e931d73a42966b1c49cb.webp",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "361512109001146369",
+                            "username": "atl4st#0",
+                            "avatar": "https://cdn.discordapp.com/avatars/361512109001146369/63375dea1d14e931d73a42966b1c49cb.webp"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "ＳｈｉｇｅＵＩ☆",
+                            "rating": 11921,
+                            "rating_max": 11921,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                            "stars": 30,
+                            "title": "どうしようもなく今を生きている"
+                        }
+                    ],
+                    "registered_time": "2023-06-18T15:14:05.212Z",
+                    "last_login": "2023-06-18T15:14:05.212Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "ＳｈｉｇｅＵＩ☆",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/02dd037a9fe883b6.png",
+                "rating": 11921,
+                "rating_max": 11921,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                "stars": 59,
+                "title": "どうしようもなく今を生きている",
+                "created_time": "2023-06-21T16:04:06.000Z",
+                "updated_time": "2023-06-21T16:04:06.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5a86c8a184ad966102b2a",
+                    "team": "64934e6945be10d13fe637c7",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648f1f3db393d5cb3139eb01",
+                        "user_id": 30,
+                        "username": "atl4st",
+                        "avatar": "https://cdn.discordapp.com/avatars/361512109001146369/63375dea1d14e931d73a42966b1c49cb.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "361512109001146369",
+                                "username": "atl4st#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/361512109001146369/63375dea1d14e931d73a42966b1c49cb.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "ＳｈｉｇｅＵＩ☆",
+                                "rating": 11921,
+                                "rating_max": 11921,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                                "stars": 30,
+                                "title": "どうしようもなく今を生きている"
+                            }
+                        ],
+                        "registered_time": "2023-06-18T15:14:05.212Z",
+                        "last_login": "2023-06-18T15:14:05.212Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "ＳｈｉｇｅＵＩ☆",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/02dd037a9fe883b6.png",
+                    "rating": 11921,
+                    "rating_max": 11921,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                    "stars": 59,
+                    "title": "どうしようもなく今を生きている",
+                    "created_time": "2023-06-21T16:04:06.000Z",
+                    "updated_time": "2023-06-21T16:04:06.000Z"
+                },
+                {
+                    "id": "64a5a9488a184ad966102b2b",
+                    "team": "64934e6945be10d13fe637c7",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "game": "maimaidx-exp",
+                    "username": "Ａｐｒ１６ｔｈ！",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/02dd037a9fe883b6.png",
+                    "rating": 15150,
+                    "rating_max": 15150,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_05AJFCJjbq.png",
+                    "stars": 364,
+                    "title": "し、仕事が早すぎる",
+                    "created_time": "2023-06-21T16:04:06.000Z",
+                    "updated_time": "2023-06-21T16:04:06.000Z"
+                }
+            ],
+            "average_rating": 13535.5,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1121160772937068637",
+            "created_time": "2023-06-21T16:04:06.000Z",
+            "updated_time": "2023-06-21T16:04:06.000Z"
+        },
+        {
+            "id": "64934ebf45be10d13fe637c9",
+            "team_id": 4,
+            "name": "SIU CAP XE LAN",
+            "slug": "siu-cap-xe-lan",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/7f56ea507152d048faa25f340c53105c.png?1687387367859",
+            "leader": {
+                "id": "64a5ae3d8a184ad966102b2c",
+                "team": "64934ebf45be10d13fe637c9",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "648b294fb393d5cb3139e5a4",
+                    "user_id": 13,
+                    "username": "sutubacbo",
+                    "avatar": "https://cdn.discordapp.com/avatars/345938902558965760/3032890e2d87c63036f82449d6f9ea91.webp",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "345938902558965760",
+                            "username": "sutubacbo#0",
+                            "avatar": "https://cdn.discordapp.com/avatars/345938902558965760/3032890e2d87c63036f82449d6f9ea91.webp"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "ＤＴＬＦＢＫ",
+                            "rating": 14590,
+                            "rating_max": 14590,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                            "stars": 461,
+                            "title": "Rating Achiever -PLATINUM-"
+                        }
+                    ],
+                    "registered_time": "2023-06-15T15:07:59.257Z",
+                    "last_login": "2023-06-18T14:59:27.423Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "ＤＴＬＦＢＫ！",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/33bc3f1a0dfe6954.png",
+                "rating": 14590,
+                "rating_max": 14590,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                "stars": 465,
+                "title": "Rating Achiever -PLATINUM-",
+                "created_time": "2023-06-21T16:05:43.000Z",
+                "updated_time": "2023-06-21T16:05:43.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5ae3d8a184ad966102b2c",
+                    "team": "64934ebf45be10d13fe637c9",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648b294fb393d5cb3139e5a4",
+                        "user_id": 13,
+                        "username": "sutubacbo",
+                        "avatar": "https://cdn.discordapp.com/avatars/345938902558965760/3032890e2d87c63036f82449d6f9ea91.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "345938902558965760",
+                                "username": "sutubacbo#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/345938902558965760/3032890e2d87c63036f82449d6f9ea91.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "ＤＴＬＦＢＫ",
+                                "rating": 14590,
+                                "rating_max": 14590,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                                "stars": 461,
+                                "title": "Rating Achiever -PLATINUM-"
+                            }
+                        ],
+                        "registered_time": "2023-06-15T15:07:59.257Z",
+                        "last_login": "2023-06-18T14:59:27.423Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "ＤＴＬＦＢＫ！",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/33bc3f1a0dfe6954.png",
+                    "rating": 14590,
+                    "rating_max": 14590,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                    "stars": 465,
+                    "title": "Rating Achiever -PLATINUM-",
+                    "created_time": "2023-06-21T16:05:43.000Z",
+                    "updated_time": "2023-06-21T16:05:43.000Z"
+                },
+                {
+                    "id": "64a5aeb98a184ad966102b2d",
+                    "team": "64934ebf45be10d13fe637c9",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "64931d081f918502fb32021c",
+                        "user_id": 34,
+                        "username": "hoshimachisuisei.",
+                        "avatar": "https://cdn.discordapp.com/avatars/353098759061897216/2cc09b22a717ad00f098d34f1dd69c26.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "353098759061897216",
+                                "username": "hoshimachisuisei.#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/353098759061897216/2cc09b22a717ad00f098d34f1dd69c26.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｓｕｉｓｅｉ",
+                                "rating": 14173,
+                                "rating_max": 14173,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_12ruJTrWoU.png",
+                                "stars": 154,
+                                "title": "★==============Σ(ﾟдﾟ；)"
+                            }
+                        ],
+                        "registered_time": "2023-06-21T15:53:44.299Z",
+                        "last_login": "2023-06-21T15:53:44.299Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｓｕｉｓｅｉ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/17c569ea9c96b2f4.png",
+                    "rating": 14173,
+                    "rating_max": 14173,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_12ruJTrWoU.png",
+                    "stars": 154,
+                    "title": "★==============Σ(ﾟдﾟ；)",
+                    "created_time": "2023-06-21T16:05:43.000Z",
+                    "updated_time": "2023-06-21T16:05:43.000Z"
+                }
+            ],
+            "average_rating": 14381.5,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1121160944043700326",
+            "created_time": "2023-06-21T16:05:43.000Z",
+            "updated_time": "2023-06-21T16:05:43.000Z"
+        },
+        {
+            "id": "64934efd45be10d13fe637ca",
+            "team_id": 5,
+            "name": "FAN Lỏn 20 NĂM",
+            "slug": "fan-lon-20-nam",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/8cd5dd4d802fa293063ba7c904966d21.png?1687363541448",
+            "leader": {
+                "id": "64a5b08b8a184ad966102b2e",
+                "team": "64934efd45be10d13fe637ca",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "648b212eb393d5cb3139e412",
+                    "user_id": 8,
+                    "username": "geno2806",
+                    "avatar": "https://cdn.discordapp.com/avatars/345947413728591875/5844d0b03a06742800754030f22b7aec.webp",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "345947413728591875",
+                            "username": "geno2806",
+                            "avatar": "https://cdn.discordapp.com/avatars/345947413728591875/5844d0b03a06742800754030f22b7aec.webp"
+                        }
+                    },
+                    "games": [],
+                    "registered_time": "2023-06-15T14:33:18.710Z",
+                    "last_login": "2023-06-15T14:33:18.710Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "２０６☆Ｇｅｎｏ",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/74b08181d1437b4b.png",
+                "rating": 15133,
+                "rating_max": 15133,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_14brd4ch6F.png",
+                "stars": 278,
+                "title": "★==============Σ(ﾟдﾟ；)",
+                "created_time": "2023-06-21T16:51:03.000Z",
+                "updated_time": "2023-06-21T16:51:03.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5b08b8a184ad966102b2e",
+                    "team": "64934efd45be10d13fe637ca",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648b212eb393d5cb3139e412",
+                        "user_id": 8,
+                        "username": "geno2806",
+                        "avatar": "https://cdn.discordapp.com/avatars/345947413728591875/5844d0b03a06742800754030f22b7aec.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "345947413728591875",
+                                "username": "geno2806",
+                                "avatar": "https://cdn.discordapp.com/avatars/345947413728591875/5844d0b03a06742800754030f22b7aec.webp"
+                            }
+                        },
+                        "games": [],
+                        "registered_time": "2023-06-15T14:33:18.710Z",
+                        "last_login": "2023-06-15T14:33:18.710Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "２０６☆Ｇｅｎｏ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/74b08181d1437b4b.png",
+                    "rating": 15133,
+                    "rating_max": 15133,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_14brd4ch6F.png",
+                    "stars": 278,
+                    "title": "★==============Σ(ﾟдﾟ；)",
+                    "created_time": "2023-06-21T16:51:03.000Z",
+                    "updated_time": "2023-06-21T16:51:03.000Z"
+                },
+                {
+                    "id": "64a5b0f28a184ad966102b2f",
+                    "team": "64934efd45be10d13fe637ca",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "game": "maimaidx-exp",
+                    "username": "（・ω・）～♪",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/74b08181d1437b4b.png",
+                    "rating": 14063,
+                    "rating_max": 14063,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_01VFe8gl5z.png",
+                    "stars": 364,
+                    "title": "つあメン覚醒電鉄　準急",
+                    "created_time": "2023-06-21T16:51:03.000Z",
+                    "updated_time": "2023-06-21T16:51:03.000Z"
+                }
+            ],
+            "average_rating": 14598,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1121161045780725851",
+            "created_time": "2023-06-21T16:51:03.000Z",
+            "updated_time": "2023-06-21T16:51:03.000Z"
+        },
+        {
+            "id": "64a26716a0b193baa3ce93df",
+            "team_id": 6,
+            "name": "Ankara Messi",
+            "slug": "ankara-messi",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/cded8d52b13786cbc2dcaf817a6ac5e9.png?1687436530353",
+            "leader": {
+                "id": "64a5b1f98a184ad966102b32",
+                "team": "64a26716a0b193baa3ce93df",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "game": "maimaidx-exp",
+                "username": "ＡＬ－１Ｓ",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/02dd037a9fe883b6.png",
+                "rating": 14847,
+                "rating_max": 14847,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_12qWgEcuKi.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                "stars": 330,
+                "title": "マ°イマ°イ",
+                "created_time": "2023-06-22T12:22:13.000Z",
+                "updated_time": "2023-06-22T12:22:13.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5b1f98a184ad966102b32",
+                    "team": "64a26716a0b193baa3ce93df",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "game": "maimaidx-exp",
+                    "username": "ＡＬ－１Ｓ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/02dd037a9fe883b6.png",
+                    "rating": 14847,
+                    "rating_max": 14847,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_12qWgEcuKi.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                    "stars": 330,
+                    "title": "マ°イマ°イ",
+                    "created_time": "2023-06-22T12:22:13.000Z",
+                    "updated_time": "2023-06-22T12:22:13.000Z"
+                },
+                {
+                    "id": "64a5b2668a184ad966102b33",
+                    "team": "64a26716a0b193baa3ce93df",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "6473009dbfe7bf52c652ac76",
+                        "user_id": 6,
+                        "username": "Hanamaru_",
+                        "avatar": "https://cdn.discordapp.com/avatars/636920841908518913/3c31f364178a1c76f79c573d918a6832.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "636920841908518913",
+                                "username": "hanamaru_",
+                                "avatar": "https://cdn.discordapp.com/avatars/636920841908518913/3c31f364178a1c76f79c573d918a6832.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "２０６☆Ｇｅｎｏ",
+                                "rating": 15133,
+                                "rating_max": 15133,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_14brd4ch6F.png",
+                                "stars": 275,
+                                "title": "★==============Σ(ﾟдﾟ；)"
+                            }
+                        ],
+                        "registered_time": "2023-05-28T07:19:57.271Z",
+                        "last_login": "2023-05-28T07:39:21.523Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｍｉｋａ☆",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/33bc3f1a0dfe6954.png",
+                    "rating": 14345,
+                    "rating_max": 14345,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                    "stars": 203,
+                    "title": "パッパッパーヤ パッパパパーヤ",
+                    "created_time": "2023-06-22T12:22:13.000Z",
+                    "updated_time": "2023-06-22T12:22:13.000Z"
+                }
+            ],
+            "average_rating": 14596,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1122950776193560667",
+            "created_time": "2023-06-22T12:22:13.000Z",
+            "updated_time": "2023-06-22T12:22:13.000Z"
+        },
+        {
+            "id": "64a278a7a0b193baa3ce93f9",
+            "team_id": 7,
+            "name": "The Incident",
+            "slug": "the-incident",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/eacf95d981ffe34ece97b5c34b88aec7.png?1687526558258",
+            "leader": {
+                "id": "64a5b2e48a184ad966102b34",
+                "team": "64a278a7a0b193baa3ce93f9",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "64959bc799300c591f3e3b6c",
+                    "user_id": 44,
+                    "username": "very_submissive_and_breedable",
+                    "avatar": "https://cdn.discordapp.com/avatars/338320934576324608/b8345c650ada820660d3e915768cedb8.png?size=1024",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "338320934576324608",
+                            "username": "very_submissive_and_breedable",
+                            "avatar": "https://cdn.discordapp.com/avatars/338320934576324608/b8345c650ada820660d3e915768cedb8.png?size=1024"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "ＹｏｎＫａＧｏｒ",
+                            "rating": 14965,
+                            "rating_max": 14965,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_12qWgEcuKi.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                            "stars": 159,
+                            "title": "あ"
+                        }
+                    ],
+                    "registered_time": "2023-06-23T13:19:02.738Z",
+                    "last_login": "2023-07-01T15:46:27.362Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "ＹｏｎＫａＧｏｒ",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_12qWgEcuKi.png",
+                "rating": 14954,
+                "rating_max": 14954,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                "stars": 162,
+                "title": "あ",
+                "created_time": "2023-06-23T13:12:35.000Z",
+                "updated_time": "2023-06-23T13:12:35.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5b2e48a184ad966102b34",
+                    "team": "64a278a7a0b193baa3ce93f9",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "64959bc799300c591f3e3b6c",
+                        "user_id": 44,
+                        "username": "very_submissive_and_breedable",
+                        "avatar": "https://cdn.discordapp.com/avatars/338320934576324608/b8345c650ada820660d3e915768cedb8.png?size=1024",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "338320934576324608",
+                                "username": "very_submissive_and_breedable",
+                                "avatar": "https://cdn.discordapp.com/avatars/338320934576324608/b8345c650ada820660d3e915768cedb8.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "ＹｏｎＫａＧｏｒ",
+                                "rating": 14965,
+                                "rating_max": 14965,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_12qWgEcuKi.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                                "stars": 159,
+                                "title": "あ"
+                            }
+                        ],
+                        "registered_time": "2023-06-23T13:19:02.738Z",
+                        "last_login": "2023-07-01T15:46:27.362Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "ＹｏｎＫａＧｏｒ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_12qWgEcuKi.png",
+                    "rating": 14954,
+                    "rating_max": 14954,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_15D7JMvMhJ.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                    "stars": 162,
+                    "title": "あ",
+                    "created_time": "2023-06-23T13:12:35.000Z",
+                    "updated_time": "2023-06-23T13:12:35.000Z"
+                },
+                {
+                    "id": "64a5b3568a184ad966102b35",
+                    "team": "64a278a7a0b193baa3ce93f9",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "649f9ab70a16132bc1486c55",
+                        "user_id": 62,
+                        "username": "fophi",
+                        "avatar": "https://cdn.discordapp.com/avatars/244701500755017728/9dbaf059d79501665152f6599e485268.png?size=1024",
+                        "country": "",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "244701500755017728",
+                                "username": "fophi#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/244701500755017728/9dbaf059d79501665152f6599e485268.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｗａｒｒｅｎｔ♪",
+                                "rating": 13837,
+                                "rating_max": 13837,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_06q7xiUXeF.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                                "stars": 228,
+                                "title": "antipathy world"
+                            }
+                        ],
+                        "registered_time": "2023-07-01T03:17:11.367Z",
+                        "last_login": "2023-07-01T03:17:11.367Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｗａｒｒｅｎｔ♪",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/33bc3f1a0dfe6954.png",
+                    "rating": 13809,
+                    "rating_max": 13809,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_06q7xiUXeF.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                    "stars": 162,
+                    "title": "antipathy world",
+                    "created_time": "2023-06-23T13:12:35.000Z",
+                    "updated_time": "2023-06-23T13:12:35.000Z"
+                }
+            ],
+            "average_rating": 14381.5,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1122950845420540036",
+            "created_time": "2023-06-23T13:12:35.000Z",
+            "updated_time": "2023-06-23T13:12:35.000Z"
+        },
+        {
+            "id": "64a2791ca0b193baa3ce93fa",
+            "team_id": 8,
+            "name": "TopBetMuonNam",
+            "slug": "topbetmuonnam",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/60156873c05f1e81590c1aa7c7fb3aaa.png?1687387367859",
+            "leader": {
+                "id": "64a5b9488a184ad966102b36",
+                "team": "64a2791ca0b193baa3ce93fa",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "649ab0e66962923c5ca1e8ad",
+                    "user_id": 51,
+                    "username": "_hyu_",
+                    "avatar": "https://cdn.discordapp.com/avatars/589448861978853406/8301d4c14c04e22a6a70adfd94646f48.png?size=1024",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "589448861978853406",
+                            "username": "_hyu_#0",
+                            "avatar": "https://cdn.discordapp.com/avatars/589448861978853406/8301d4c14c04e22a6a70adfd94646f48.png?size=1024"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "Ｈｙｕ",
+                            "rating": 13105,
+                            "rating_max": 13105,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                            "stars": 136,
+                            "title": "名取さな（パレードコーデ） 推し"
+                        }
+                    ],
+                    "registered_time": "2023-06-27T09:50:30.553Z",
+                    "last_login": "2023-06-27T09:50:30.553Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "Ｈｙｕ",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/201de4f2afe9b55e.png",
+                "rating": 13105,
+                "rating_max": 13105,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                "stars": 140,
+                "title": "名取さな（パレードコーデ） 推し",
+                "created_time": "2023-06-23T13:22:41.000Z",
+                "updated_time": "2023-06-23T13:22:41.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5b9488a184ad966102b36",
+                    "team": "64a2791ca0b193baa3ce93fa",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "649ab0e66962923c5ca1e8ad",
+                        "user_id": 51,
+                        "username": "_hyu_",
+                        "avatar": "https://cdn.discordapp.com/avatars/589448861978853406/8301d4c14c04e22a6a70adfd94646f48.png?size=1024",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "589448861978853406",
+                                "username": "_hyu_#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/589448861978853406/8301d4c14c04e22a6a70adfd94646f48.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｈｙｕ",
+                                "rating": 13105,
+                                "rating_max": 13105,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                                "stars": 136,
+                                "title": "名取さな（パレードコーデ） 推し"
+                            }
+                        ],
+                        "registered_time": "2023-06-27T09:50:30.553Z",
+                        "last_login": "2023-06-27T09:50:30.553Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｈｙｕ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/201de4f2afe9b55e.png",
+                    "rating": 13105,
+                    "rating_max": 13105,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                    "stars": 140,
+                    "title": "名取さな（パレードコーデ） 推し",
+                    "created_time": "2023-06-23T13:22:41.000Z",
+                    "updated_time": "2023-06-23T13:22:41.000Z"
+                },
+                {
+                    "id": "64a5b9aa8a184ad966102b37",
+                    "team": "64a2791ca0b193baa3ce93fa",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "649f91c10a16132bc1486bf6",
+                        "user_id": 61,
+                        "username": "BaconDonut2004",
+                        "avatar": "https://cdn.discordapp.com/avatars/948937812391120927/756032924598c2e80ee039fdd4053767.png?size=1024",
+                        "country": "",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "948937812391120927",
+                                "username": "BaconDonut2004#6837",
+                                "avatar": "https://cdn.discordapp.com/avatars/948937812391120927/756032924598c2e80ee039fdd4053767.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "ｓａｏｃｘｄｃ",
+                                "rating": 12226,
+                                "rating_max": 12226,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                                "stars": 135,
+                                "title": "オトモダチ対戦SEASON9　TOP500"
+                            }
+                        ],
+                        "registered_time": "2023-07-01T02:38:57.428Z",
+                        "last_login": "2023-07-01T02:38:57.428Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "ｓａｏｃｘｄｃ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/88bae11fb709ddd4.png",
+                    "rating": 12226,
+                    "rating_max": 12226,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_00T7GHJvGe.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_07kRW9Mzgf.png",
+                    "stars": 141,
+                    "title": "オトモダチ対戦SEASON9　TOP500",
+                    "created_time": "2023-06-23T13:22:41.000Z",
+                    "updated_time": "2023-06-23T13:22:41.000Z"
+                }
+            ],
+            "average_rating": 12665,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1122950896377139350",
+            "created_time": "2023-06-23T13:22:41.000Z",
+            "updated_time": "2023-06-23T13:22:41.000Z"
+        },
+        {
+            "id": "64a2796ea0b193baa3ce93fb",
+            "team_id": 9,
+            "name": "kaneki ken",
+            "slug": "kaneki-ken",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/1aff90a46aba01ec640ebae96f598953.png?1687537145081",
+            "leader": {
+                "id": "64a5baee8a184ad966102b38",
+                "team": "64a2796ea0b193baa3ce93fb",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "648e0740b393d5cb3139eac4",
+                    "user_id": 29,
+                    "username": "luna6690",
+                    "avatar": "https://cdn.discordapp.com/avatars/606398751585730561/fc584a5b84c446fa2bb565073ff03a62.webp",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "606398751585730561",
+                            "username": "luna6690#0",
+                            "avatar": "https://cdn.discordapp.com/avatars/606398751585730561/fc584a5b84c446fa2bb565073ff03a62.webp"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "Ｌｕｎａ～☆",
+                            "rating": 13982,
+                            "rating_max": 13982,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_08R8oyTJTT.png",
+                            "stars": 232,
+                            "title": "敗北を知りたい"
+                        }
+                    ],
+                    "registered_time": "2023-06-17T19:19:28.289Z",
+                    "last_login": "2023-06-18T06:18:02.987Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "Ｌｕｎａ～☆",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/88bae11fb709ddd4.png",
+                "rating": 13975,
+                "rating_max": 13975,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_08paNFJX5Y.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_08R8oyTJTT.png",
+                "stars": 232,
+                "title": "アシッド すき",
+                "created_time": "2023-06-23T16:19:06.000Z",
+                "updated_time": "2023-06-23T16:19:06.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5baee8a184ad966102b38",
+                    "team": "64a2796ea0b193baa3ce93fb",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648e0740b393d5cb3139eac4",
+                        "user_id": 29,
+                        "username": "luna6690",
+                        "avatar": "https://cdn.discordapp.com/avatars/606398751585730561/fc584a5b84c446fa2bb565073ff03a62.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "606398751585730561",
+                                "username": "luna6690#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/606398751585730561/fc584a5b84c446fa2bb565073ff03a62.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｌｕｎａ～☆",
+                                "rating": 13982,
+                                "rating_max": 13982,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_08R8oyTJTT.png",
+                                "stars": 232,
+                                "title": "敗北を知りたい"
+                            }
+                        ],
+                        "registered_time": "2023-06-17T19:19:28.289Z",
+                        "last_login": "2023-06-18T06:18:02.987Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｌｕｎａ～☆",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/88bae11fb709ddd4.png",
+                    "rating": 13975,
+                    "rating_max": 13975,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_08paNFJX5Y.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_08R8oyTJTT.png",
+                    "stars": 232,
+                    "title": "アシッド すき",
+                    "created_time": "2023-06-23T16:19:06.000Z",
+                    "updated_time": "2023-06-23T16:19:06.000Z"
+                },
+                {
+                    "id": "64a5bb868a184ad966102b39",
+                    "team": "64a2796ea0b193baa3ce93fb",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648b28bab393d5cb3139e57e",
+                        "user_id": 12,
+                        "username": "bocchit",
+                        "avatar": "https://cdn.discordapp.com/avatars/540822006250340362/4010ee44b9cb32f713ed73c8e5f36127.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "540822006250340362",
+                                "username": "bocchit#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/540822006250340362/4010ee44b9cb32f713ed73c8e5f36127.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｙｕｋｉｓｕｋｉ",
+                                "rating": 14823,
+                                "rating_max": 14823,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                                "stars": 251,
+                                "title": "★==============Σ(ﾟдﾟ；)"
+                            }
+                        ],
+                        "registered_time": "2023-06-15T15:05:30.519Z",
+                        "last_login": "2023-06-15T15:05:30.519Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｙｕｋｉｓｕｋｉ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/ed0f0f748d9bb888.png",
+                    "rating": 14823,
+                    "rating_max": 14823,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                    "stars": 251,
+                    "title": "★==============Σ(ﾟдﾟ；)",
+                    "created_time": "2023-06-23T16:19:06.000Z",
+                    "updated_time": "2023-06-23T16:19:06.000Z"
+                }
+            ],
+            "average_rating": 14399,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1122950947786727454",
+            "created_time": "2023-06-23T16:19:06.000Z",
+            "updated_time": "2023-06-23T16:19:06.000Z"
+        },
+        {
+            "id": "64a279cda0b193baa3ce93fe",
+            "team_id": 10,
+            "name": "FAUNA",
+            "slug": "fauna",
+            "avatar": "https://assets-selenadia.mune.moe/assets/tournaments/narukami/images/avatars/teams/a03eeddd2189427e71234bf6b4f43c6b.png?1687539833467",
+            "leader": {
+                "id": "64a5bc848a184ad966102b3c",
+                "team": "64a2796ea0b193baa3ce93fb",
+                "tournament": "6471b6a804079161d4c62dfb",
+                "user": {
+                    "id": "648b28bab393d5cb3139e57e",
+                    "user_id": 12,
+                    "username": "bocchit",
+                    "avatar": "https://cdn.discordapp.com/avatars/540822006250340362/4010ee44b9cb32f713ed73c8e5f36127.webp",
+                    "country": "VN",
+                    "oauth": {
+                        "discord": {
+                            "user_id": "540822006250340362",
+                            "username": "bocchit#0",
+                            "avatar": "https://cdn.discordapp.com/avatars/540822006250340362/4010ee44b9cb32f713ed73c8e5f36127.webp"
+                        }
+                    },
+                    "games": [
+                        {
+                            "game": "maimaidx-exp",
+                            "username": "Ｙｕｋｉｓｕｋｉ",
+                            "rating": 14823,
+                            "rating_max": 14823,
+                            "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                            "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                            "stars": 251,
+                            "title": "★==============Σ(ﾟдﾟ；)"
+                        }
+                    ],
+                    "registered_time": "2023-06-15T15:05:30.519Z",
+                    "last_login": "2023-06-15T15:05:30.519Z"
+                },
+                "game": "maimaidx-exp",
+                "username": "Ｈｉｎａｍｉ☆Ｙ",
+                "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/74b08181d1437b4b.png",
+                "rating": 13787,
+                "rating_max": 13787,
+                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_12ruJTrWoU.png",
+                "stars": 108,
+                "title": "ああ　幸せになっちまうよ",
+                "created_time": "2023-06-23T17:03:56.000Z",
+                "updated_time": "2023-06-23T17:03:56.000Z"
+            },
+            "members": [
+                {
+                    "id": "64a5bc848a184ad966102b3c",
+                    "team": "64a2796ea0b193baa3ce93fb",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "648b28bab393d5cb3139e57e",
+                        "user_id": 12,
+                        "username": "bocchit",
+                        "avatar": "https://cdn.discordapp.com/avatars/540822006250340362/4010ee44b9cb32f713ed73c8e5f36127.webp",
+                        "country": "VN",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "540822006250340362",
+                                "username": "bocchit#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/540822006250340362/4010ee44b9cb32f713ed73c8e5f36127.webp"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｙｕｋｉｓｕｋｉ",
+                                "rating": 14823,
+                                "rating_max": 14823,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_10hvsSHd90.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_10FODgtQo4.png",
+                                "stars": 251,
+                                "title": "★==============Σ(ﾟдﾟ；)"
+                            }
+                        ],
+                        "registered_time": "2023-06-15T15:05:30.519Z",
+                        "last_login": "2023-06-15T15:05:30.519Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｈｉｎａｍｉ☆Ｙ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/74b08181d1437b4b.png",
+                    "rating": 13787,
+                    "rating_max": 13787,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_07zaVOj56m.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_12ruJTrWoU.png",
+                    "stars": 108,
+                    "title": "ああ　幸せになっちまうよ",
+                    "created_time": "2023-06-23T17:03:56.000Z",
+                    "updated_time": "2023-06-23T17:03:56.000Z"
+                },
+                {
+                    "id": "64a5bcce8a184ad966102b3d",
+                    "team": "64a2796ea0b193baa3ce93fb",
+                    "tournament": "6471b6a804079161d4c62dfb",
+                    "user": {
+                        "id": "649fb7110a16132bc1486d0c",
+                        "user_id": 63,
+                        "username": "eh2",
+                        "avatar": "https://cdn.discordapp.com/avatars/904677232054796298/4fbfa7896d552e09ea4799e2c45b37e5.png?size=1024",
+                        "country": "",
+                        "oauth": {
+                            "discord": {
+                                "user_id": "904677232054796298",
+                                "username": "eh2#0",
+                                "avatar": "https://cdn.discordapp.com/avatars/904677232054796298/4fbfa7896d552e09ea4799e2c45b37e5.png?size=1024"
+                            }
+                        },
+                        "games": [
+                            {
+                                "game": "maimaidx-exp",
+                                "username": "Ｏｈａｒｅｃｈｉ",
+                                "rating": 12163,
+                                "rating_max": 12163,
+                                "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_05vtR7TUYd.png",
+                                "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_09XFJ50NEJ.png",
+                                "stars": 151,
+                                "title": "☆(･ω･ﾉﾉﾞ☆(･ω･ﾉﾉﾞ☆"
+                            }
+                        ],
+                        "registered_time": "2023-07-01T05:18:09.580Z",
+                        "last_login": "2023-07-01T05:18:09.580Z"
+                    },
+                    "game": "maimaidx-exp",
+                    "username": "Ｏｈａｒｅｃｈｉ",
+                    "avatar": "https://maimaidx-eng.com/maimai-mobile/img/Icon/526fd39b158b9f74.png",
+                    "rating": 12163,
+                    "rating_max": 12163,
+                    "course": "https://maimaidx-eng.com/maimai-mobile/img/course/course_rank_05vtR7TUYd.png",
+                    "class": "https://maimaidx-eng.com/maimai-mobile/img/class/class_rank_s_09XFJ50NEJ.png",
+                    "stars": 151,
+                    "title": "☆(･ω･ﾉﾉﾞ☆(･ω･ﾉﾉﾞ☆",
+                    "created_time": "2023-06-23T17:03:56.000Z",
+                    "updated_time": "2023-06-23T17:03:56.000Z"
+                }
+            ],
+            "average_rating": 12975,
+            "ranking": 0,
+            "tournament": "6471b6a804079161d4c62dfb",
+            "role_id": "1122951017269579817",
+            "created_time": "2023-06-23T17:03:56.000Z",
+            "updated_time": "2023-06-23T17:03:56.000Z"
+        }
+    ]
+}

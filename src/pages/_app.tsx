@@ -3,7 +3,7 @@ import type { AppProps } from "next/app";
 import { MuseoModerno } from "next/font/google";
 
 const mm = MuseoModerno({
-    weight: ["400", "500", "600"],
+    weight: ["400", "500", "600", "700", "800", "900"],
     subsets: ["latin"],
 });
 
