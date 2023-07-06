@@ -103,7 +103,7 @@ const Picker = () => {
     const [pickerState, pickerDispatch] = useReducer(reducer, { ...initialState });
     const [countDown, setCountDown] = useState(0);
     const [unlock, setUnlock] = useState(false);
-    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>();
+    const [timeoutId, setTimeoutId] = useState<NodeJS.Timer>();
     const router = useRouter();
 
     const ws = useWebSocket(WS_URL, {
@@ -122,6 +122,13 @@ const Picker = () => {
                 }
                 case WS_SIGNALS.START_SIGNALING: {
                     setCountDown(30);
+                    clearInterval(timeoutId);
+
+                    const Id = setInterval(() => {
+                        setCountDown((countDown) => countDown - 1);
+                    }, 1000);
+                    setTimeoutId(Id);
+
                     pickerDispatch({
                         type: ACTION_TYPE.START_SIGNALING,
                     });
@@ -169,6 +176,8 @@ const Picker = () => {
                 data: JSON.stringify(pickerState.maps),
             });
 
+            clearInterval(timeoutId);
+
             return;
         } else {
             pickerDispatch({
@@ -176,14 +185,14 @@ const Picker = () => {
                 data: false,
             });
 
-            clearTimeout(timeoutId);
+            // clearTimeout(timeoutId);
         }
 
-        const Id = setTimeout(() => {
-            setCountDown(countDown - 1);
-        }, 1000);
+        // const Id = setTimeout(() => {
+        //     setCountDown(countDown - 1);
+        // }, 1000);
 
-        setTimeoutId(Id);
+        // setTimeoutId(Id);
     }, [countDown]);
 
     return (

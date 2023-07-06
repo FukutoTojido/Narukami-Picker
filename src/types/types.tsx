@@ -136,6 +136,7 @@ interface ControllerState {
     round: number;
     maps: MapState[];
     state: State;
+    phase: PHASE
 }
 
 interface SetMap {

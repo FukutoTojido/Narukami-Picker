@@ -107,6 +107,7 @@ const initialState: ControllerState = {
         idle: false,
         acceptRand: false,
     },
+    phase: PHASE.BAN,
 };
 
 const reducer = (state: ControllerState, action: Action) => {
@@ -128,6 +129,14 @@ const reducer = (state: ControllerState, action: Action) => {
         case ACTION_TYPE.LOAD_MAPS: {
             console.log(action.data);
             state.maps = action.data;
+            return { ...state };
+        }
+        case ACTION_TYPE.SET_MAP: {
+            state.maps[action.data!.idx].state = action.data.state;
+            return { ...state };
+        }
+        case ACTION_TYPE.CHANGE_PHASE: {
+            state.phase = action.data;
             return { ...state };
         }
         default: {
@@ -238,6 +247,59 @@ const Controller = () => {
                             ></div>
                             {teams_.teams[controllerState.team.right].name}
                         </button>
+                    </div>
+                    <div className="middleCol">
+                        <div className="section">
+                            <div className="label">
+                                Current Phase: <span>{controllerState.phase}</span>
+                            </div>
+                            <input
+                                type="checkbox"
+                                onChange={(event) => {
+                                    controllerDispatcher({
+                                        type: ACTION_TYPE.CHANGE_PHASE,
+                                        data: controllerState.phase === PHASE.BAN ? PHASE.PICK : PHASE.BAN,
+                                    });
+                                }}
+                            />
+                        </div>
+                        <div className="mapList">
+                            {controllerState.maps.map((map, idx) => {
+                                return (
+                                    <div
+                                        className="mapNode"
+                                        style={{
+                                            backgroundImage: `linear-gradient(-90deg, rgba(127, 109, 116, 1) 20%, rgba(0 0 0 / .7)), url(https://maimaidx-eng.com/maimai-mobile/img/Music/${map.image})`,
+                                        }}
+                                        onClick={() => {
+                                            controllerDispatcher({
+                                                type: ACTION_TYPE.SET_MAP,
+                                                data: {
+                                                    idx: idx,
+                                                    state: map.state !== PHASE.NONE ? PHASE.NONE : controllerState.phase,
+                                                },
+                                            });
+                                        }}
+                                    >
+                                        <div
+                                            className="mapCover"
+                                            style={{
+                                                backgroundImage: `url(https://maimaidx-eng.com/maimai-mobile/img/Music/${map.image})`,
+                                            }}
+                                        ></div>
+                                        <div className="metadata">
+                                            <div className="title">{map.title}</div>
+                                            <div className="artist">{map.artist}</div>
+                                            <div className={`type ${map.type === CHART_DIFF.RE_MASTER ? "REMAS" : map.type}`}>{map.type}</div>
+                                        </div>
+                                        <div className="level">
+                                            Lv<span>{map.lvl}</span>
+                                        </div>
+                                        <div className={`state ${map.state}`}></div>
+                                    </div>
+                                );
+                            })}
+                        </div>
                     </div>
                     <div className="rightCol">
                         <div className="section">
@@ -466,6 +528,8 @@ const Controller = () => {
                         width: 100vw;
                         height: 100vh;
 
+                        padding: 30px;
+
                         background-image: linear-gradient(0deg, #3d313b, #593e44);
 
                         display: flex;
@@ -475,10 +539,8 @@ const Controller = () => {
 
                     .controller {
                         position: relative;
-                        width: 60%;
-                         {
-                            /* height: 50%; */
-                        }
+                        width: 100%;
+                        height: 100%;
 
                         background-color: rgba(0 0 0 /0.5);
                         border-radius: 10px;
@@ -487,7 +549,7 @@ const Controller = () => {
                     }
 
                     .leftCol {
-                        width: 40%;
+                        width: 25%;
                          {
                             /* height: 100%; */
                         }
@@ -591,6 +653,14 @@ const Controller = () => {
                         align-items: center;
                     }
 
+                    .middleCol .section {
+                        font-size: 24px;
+                    }
+                    
+                    .section span {
+                        font-weight: 700;
+                    }
+
                     .section input[type="checkbox"] {
                         position: relative;
                         appearance: none;
@@ -646,21 +716,6 @@ const Controller = () => {
 
                     .section input[type="checkbox"]:checked:after {
                         left: 35px;
-                    }
-
-                    .section input[type="number"] {
-                        width: 50px;
-                        border: none;
-                        padding: 5px 10px;
-                        border-radius: 10px;
-
-                        background-color: rgba(0 0 0 /0.5);
-                        font-size: 16px;
-                        text-align: center;
-                    }
-
-                    .section input[type="number"]:focus {
-                        outline: solid 2px #eebe76;
                     }
 
                     .roundSwitch {
@@ -847,6 +902,172 @@ const Controller = () => {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         white-space: nowrap;
+                    }
+
+                    .middleCol {
+                        width: 45%;
+                        padding: 30px;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 30px;
+                    }
+
+                    .mapList {
+                        width: 100%;
+
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 20px;
+                        align-content: flex-start;
+                    }
+
+                    .mapNode {
+                        position: relative;
+
+                        width: 1fr;
+                        height: 100px;
+                        padding: 15px;
+
+                        background-color: rgba(0 0 0 / 0.5);
+                        border-radius: 10px;
+
+                        background-size: cover;
+                        background-position: center;
+
+                        display: flex;
+                        gap: 20px;
+
+                        overflow: hidden;
+                        user-select: none;
+                    }
+
+                    .state {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+
+                        width: 100%;
+                        height: 100%;
+
+                        border-radius: 10px;
+                        opacity: 0;
+
+                        border: solid 4px transparent;
+
+                        transition: ease-in-out 100ms;
+                    }
+
+                    .state.BAN {
+                        opacity: 1;
+                        border: solid 4px #f23a65;
+                    }
+
+                    .state.PICK {
+                        opacity: 1;
+                        border: solid 4px #3aa6f2;
+                    }
+
+                    .state.NONE.lock {
+                        opacity: 1;
+                        background-color: rgba(0 0 0 /0.5);
+                    }
+
+                    .mapCover {
+                        aspect-ratio: 1 / 1;
+                        height: 100%;
+                        background-size: cover;
+                        background-position: center;
+
+                        border-radius: 10px;
+                    }
+
+                    .metadata {
+                        flex: 1;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+
+                        overflow: hidden;
+                    }
+
+                    .metadata * {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+
+                        text-shadow: 0 1px 1px black;
+                    }
+
+                    .title {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: #fdedf9;
+                    }
+
+                    .artist {
+                        font-size: 12px;
+                        font-weight: 600;
+                        color: #dabfc5;
+                    }
+
+                    .type {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+
+                    .BASIC {
+                        color: #80d24d;
+                    }
+
+                    .ADVANCED {
+                        color: #f0bc30;
+                    }
+
+                    .EXPERT {
+                        color: #f3898e;
+                    }
+
+                    .MASTER {
+                        color: #a869df;
+                    }
+
+                    .REMAS {
+                        color: #d3abf5;
+                    }
+
+                    .level {
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+
+                        padding: 10px 15px;
+                        font-style: italic;
+                        color: #faeef4;
+                    }
+
+                    .level span {
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    .version {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+
+                        margin: 10px;
+
+                        width: 60px;
+                        height: 12px;
+
+                        background-color: white;
+                        border-radius: 6px;
+
+                        background-size: contain;
+                        background-position: center right;
+                        background-repeat: no-repeat;
                     }
                 `}</style>
             </div>
