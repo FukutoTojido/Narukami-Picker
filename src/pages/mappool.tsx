@@ -32,6 +32,7 @@ const initialState: MappoolState = {
         left: [],
         right: [],
     },
+    round: "Quarter Finals",
 };
 
 const reducer = (state: MappoolState, action: Action) => {
@@ -50,6 +51,12 @@ const reducer = (state: MappoolState, action: Action) => {
             state.team = action.data;
 
             return { ...state };
+        }
+        case ACTION_TYPE.UPDATE_ROUND: {
+            return {
+                ...state,
+                round: action.data,
+            };
         }
         default: {
             return { ...state };
@@ -106,6 +113,13 @@ const Mappool = () => {
 
                     break;
                 }
+                case WS_SIGNALS.UPDATE_ROUND: {
+                    mappoolDispatcher({
+                        type: ACTION_TYPE.UPDATE_ROUND,
+                        data: mes.data,
+                    });
+                    break;
+                }
             }
         },
         shouldReconnect: (closedEvent) => true,
@@ -124,6 +138,7 @@ const Mappool = () => {
             </Head>
             <div className="App">
                 <video src="/Mappool Screen.webm" autoPlay muted loop></video>
+                <div className="roundName">{mappoolState.round}</div>
                 <div className="team left">
                     <div
                         className="icon"
@@ -311,6 +326,34 @@ const Mappool = () => {
 
                         font-size: 32px;
                         font-weight: 700;
+                    }
+
+                    .roundName {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+
+                        padding: 30px;
+                        font-size: 48px;
+                        font-weight: 600;
+                        color: #fef3f3;
+
+                        letter-spacing: 0.2em;
+                    }
+
+                    .roundName:after {
+                        content: "Mappool Screen";
+                        position: absolute;
+
+                        bottom: -20px;
+                        right: 0;
+
+                        font-size: 20px;
+                        letter-spacing: 0.1em;
+                        font-weight: 400;
+
+                        padding: 30px;
+                        opacity: 0.5;
                     }
                 `}</style>
             </div>

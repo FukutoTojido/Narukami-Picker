@@ -26,7 +26,7 @@ const initialState: OverlayState = {
         left: 0,
         right: 0,
     },
-    round: "",
+    round: "Quarter Finals",
 };
 
 const reducer = (state: OverlayState, action: Action) => {
@@ -35,6 +35,11 @@ const reducer = (state: OverlayState, action: Action) => {
         return {
             ...state,
             score: action.data,
+        };
+    if (action.type === ACTION_TYPE.UPDATE_ROUND)
+        return {
+            ...state,
+            round: action.data,
         };
     return { ...state };
 };
@@ -65,6 +70,12 @@ const Overlay = () => {
                     });
                     break;
                 }
+                case WS_SIGNALS.UPDATE_ROUND: {
+                    overlayDispatcher({
+                        type: ACTION_TYPE.UPDATE_ROUND,
+                        data: mes.data,
+                    });
+                }
             }
         },
         shouldReconnect: (closedEvent) => true,
@@ -80,6 +91,7 @@ const Overlay = () => {
             </Head>
             <div className="App">
                 <video src="/Players Screen.webm" autoPlay muted loop></video>
+                <div className="roundName">{overlayState.round}</div>
                 <div className="team left">
                     <div
                         className="icon"
@@ -171,6 +183,8 @@ const Overlay = () => {
                             font-weight: 700;
                             font-style: italic;
                             color: #fef3f3;
+
+                            letter-spacing: 0.1em;
                         }
 
                         .team.left .name {
@@ -186,8 +200,37 @@ const Overlay = () => {
                         .accuracy {
                             width: 200px;
                             text-align: center;
-                            font-size: 20px;
+                            font-size: 23px;
                             font-style: italic;
+                            letter-spacing: 0.1em;
+                        }
+
+                        .roundName {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+
+                            padding: 30px;
+                            font-size: 48px;
+                            font-weight: 600;
+                            color: #fef3f3;
+
+                            letter-spacing: 0.2em;
+                        }
+
+                        .roundName:after {
+                            content: "Gameplay Screen";
+                            position: absolute;
+
+                            bottom: -20px;
+                            right: 0;
+
+                            font-size: 20px;
+                            letter-spacing: 0.1em;
+                            font-weight: 400;
+
+                            padding: 30px;
+                            opacity: 0.5;
                         }
                     `}
                 </style>

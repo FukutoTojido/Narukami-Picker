@@ -177,7 +177,7 @@ const Controller = () => {
                     if (maps.length === 0) break;
 
                     const currentMap = controllerState.maps.map((map: MapState, idx: number) => {
-                        if (map.state === PHASE.NONE && maps[idx].state !== PHASE.NONE) map.state = maps[idx].state;
+                        if ((map.state === PHASE.NONE && maps[idx].state !== PHASE.NONE) || maps[idx].state === PHASE.BAN) map.state = maps[idx].state;
                         return map;
                     });
 
@@ -396,6 +396,11 @@ const Controller = () => {
                                             type: WS_SIGNALS.CHANGE_BAN_LIMIT,
                                             data: roundList[controllerState.round - 1].nBans,
                                         });
+
+                                        ws.sendJsonMessage({
+                                            type: WS_SIGNALS.UPDATE_ROUND,
+                                            data: roundList[controllerState.round - 1].name,
+                                        });
                                     }}
                                 >
                                     -
@@ -413,6 +418,11 @@ const Controller = () => {
                                         ws.sendJsonMessage({
                                             type: WS_SIGNALS.CHANGE_BAN_LIMIT,
                                             data: roundList[controllerState.round + 1].nBans,
+                                        });
+
+                                        ws.sendJsonMessage({
+                                            type: WS_SIGNALS.UPDATE_ROUND,
+                                            data: roundList[controllerState.round + 1].name,
                                         });
                                     }}
                                 >
