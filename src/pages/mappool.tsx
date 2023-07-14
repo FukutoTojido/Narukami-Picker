@@ -108,7 +108,7 @@ const Mappool = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(${teams_.teams[mappoolState.team.left].avatar})`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[mappoolState.team.left].avatar)}&w=1080&q=75)`,
                         }}
                     ></div>
                     <div className="name">{teams_.teams[mappoolState.team.left].name}</div>
@@ -117,7 +117,7 @@ const Mappool = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(${teams_.teams[mappoolState.team.right].avatar})`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[mappoolState.team.right].avatar)}&w=1080&q=75)`,
                         }}
                     ></div>
                     <div className="name">{teams_.teams[mappoolState.team.right].name}</div>

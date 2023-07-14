@@ -56,7 +56,7 @@ const Overlay = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(${teams_.teams[overlayState.left].avatar})`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[overlayState.left].avatar)}&w=1080&q=75)`,
                         }}
                     ></div>
                     <div className="name">{teams_.teams[overlayState.left].name}</div>
@@ -65,7 +65,7 @@ const Overlay = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(${teams_.teams[overlayState.right].avatar})`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[overlayState.right].avatar)}&w=1080&q=75)`,
                         }}
                     ></div>
                     <div className="name">{teams_.teams[overlayState.right].name}</div>
