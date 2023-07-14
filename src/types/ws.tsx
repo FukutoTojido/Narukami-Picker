@@ -12,6 +12,7 @@ enum WS_SIGNALS {
     POST_RESULT,
     SHOW_RESULT,
     UPDATE_RANDOM,
+    UPDATE_SCORE,
 }
 
 interface SwitchIdle {

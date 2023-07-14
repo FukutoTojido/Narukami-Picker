@@ -33,6 +33,7 @@ enum ACTION_TYPE {
     CHANGE_ROUND,
     START_SIGNALING,
     RANDOM,
+    UPDATE_SCORE,
 }
 
 enum SIDE {
@@ -214,6 +215,14 @@ interface Random {
     data: MapState[];
 }
 
+interface UpdateScore {
+    type: ACTION_TYPE.UPDATE_SCORE;
+    data: {
+        left: number;
+        right: number;
+    };
+}
+
 interface MapData {
     artist: string;
     catcode: string;
@@ -260,7 +269,8 @@ type Action =
     | SwitchState
     | ChangeRound
     | StartSignaling
-    | Random;
+    | Random
+    | UpdateScore;
 
 export type { MapState, MainState, Action, MappoolState, TeamName, ControllerState, FilteredMapData, User, MapData };
 export { VERSION, PHASE, CHART_DIFF, ACTION_TYPE, SIDE };

@@ -9,13 +9,31 @@ import { WS_SIGNALS } from "@/types/ws";
 import teams from "../json/team.json";
 import teams_ from "../json/teams_.json";
 
-const initialState: TeamName = {
-    left: 0,
-    right: 1,
+type OverlayState = {
+    left: number;
+    right: number;
+    score: {
+        left: number;
+        right: number;
+    };
 };
 
-const reducer = (state: TeamName, action: Action) => {
-    if (action.type === ACTION_TYPE.UPDATE_NAME) return { ...action.data };
+const initialState: OverlayState = {
+    left: 0,
+    right: 1,
+    score: {
+        left: 0,
+        right: 0,
+    },
+};
+
+const reducer = (state: OverlayState, action: Action) => {
+    if (action.type === ACTION_TYPE.UPDATE_NAME) return { ...state, left: action.data.left, right: action.data.right };
+    if (action.type === ACTION_TYPE.UPDATE_SCORE)
+        return {
+            ...state,
+            score: action.data,
+        };
     return { ...state };
 };
 
@@ -34,6 +52,13 @@ const Overlay = () => {
                 case WS_SIGNALS.UPDATE_TEAM: {
                     overlayDispatcher({
                         type: ACTION_TYPE.UPDATE_NAME,
+                        data: JSON.parse(mes.data),
+                    });
+                    break;
+                }
+                case WS_SIGNALS.UPDATE_SCORE: {
+                    overlayDispatcher({
+                        type: ACTION_TYPE.UPDATE_SCORE,
                         data: JSON.parse(mes.data),
                     });
                     break;
@@ -57,18 +82,24 @@ const Overlay = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[overlayState.left].avatar)}&w=1080&q=75)`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                teams_.teams[overlayState.left].avatar
+                            )}&w=1080&q=75)`,
                         }}
                     ></div>
+                    <div className="accuracy">{overlayState.score.left.toFixed(6)}%</div>
                     <div className="name">{teams_.teams[overlayState.left].name}</div>
                 </div>
                 <div className="team right">
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[overlayState.right].avatar)}&w=1080&q=75)`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                teams_.teams[overlayState.right].avatar
+                            )}&w=1080&q=75)`,
                         }}
                     ></div>
+                    <div className="accuracy">{overlayState.score.right.toFixed(6)}%</div>
                     <div className="name">{teams_.teams[overlayState.right].name}</div>
                 </div>
                 <style jsx>
@@ -81,7 +112,9 @@ const Overlay = () => {
                             width: 1920px;
                             height: 1080px;
 
-                            {/* background-image: url(/OverlayBackground.png); */}
+                             {
+                                /* background-image: url(/OverlayBackground.png); */
+                            }
                             background-size: cover;
                             background-position: center;
                         }
@@ -94,12 +127,15 @@ const Overlay = () => {
 
                             display: flex;
                             align-items: center;
-                            gap: 20px;
+                            gap: 0px;
 
-                            background: rgba(0 0 0 /0.5);
+                            background: rgba(0 0 0 / 0.5);
+
                             border-radius: 10px;
 
-                            overflow: hidden;
+                             {
+                                /* overflow: hidden; */
+                            }
                         }
 
                         .team.left {
@@ -126,8 +162,30 @@ const Overlay = () => {
                         }
 
                         .name {
+                            position: absolute;
+                            bottom: 85px;
+
+                            font-size: 32px;
+                            font-weight: 700;
+                            font-style: italic;
+                            color: #fef3f3;
+                        }
+
+                        .team.left .name {
+                            left: 0;
+                            text-align: left;
+                        }
+
+                        .team.right .name {
+                            right: 0;
+                            text-align: right;
+                        }
+
+                        .accuracy {
+                            width: 200px;
+                            text-align: center;
                             font-size: 20px;
-                            font-weight: 600;
+                            font-style: italic;
                         }
                     `}
                 </style>

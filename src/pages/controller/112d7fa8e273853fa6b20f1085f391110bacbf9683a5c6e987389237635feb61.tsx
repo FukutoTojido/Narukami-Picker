@@ -159,6 +159,8 @@ const Controller = () => {
     const [currentSelected, setCurrentSelected] = useState(SIDE.NONE);
     const popoutRef = useRef<HTMLDivElement>(null);
     const outsideRef = useRef<HTMLDivElement>(null);
+    const inputRefLeft = useRef<HTMLInputElement>(null);
+    const inputRefRight = useRef<HTMLInputElement>(null);
 
     const ws = useWebSocket(WS_URL, {
         onOpen: () => {
@@ -174,7 +176,7 @@ const Controller = () => {
 
                     if (maps.length === 0) break;
 
-                    const currentMap = controllerState.maps.map((map, idx) => {
+                    const currentMap = controllerState.maps.map((map: MapState, idx: number) => {
                         if (map.state === PHASE.NONE && maps[idx].state !== PHASE.NONE) map.state = maps[idx].state;
                         return map;
                     });
@@ -204,7 +206,7 @@ const Controller = () => {
 
     const getRandom = () => {
         const cloneState = structuredClone(controllerState);
-        const maps = cloneState.maps.filter((map) => map.state === PHASE.NONE || map.state === PHASE.LOCK).sort(() => 0.5 - Math.random());
+        const maps = cloneState.maps.filter((map: MapState) => map.state === PHASE.NONE || map.state === PHASE.LOCK).sort(() => 0.5 - Math.random());
         console.log(maps);
         if (maps.length === 0) return;
 
@@ -305,7 +307,7 @@ const Controller = () => {
                             />
                         </div>
                         <div className="mapList">
-                            {controllerState.maps.map((map, idx) => {
+                            {controllerState.maps.map((map: MapState, idx: number) => {
                                 return (
                                     <div
                                         className="mapNode"
@@ -506,10 +508,46 @@ const Controller = () => {
                                     ws.sendJsonMessage({
                                         type: WS_SIGNALS.RESET,
                                     });
+
+                                    if (inputRefLeft.current) inputRefLeft.current.value = "0";
+                                    if (inputRefRight.current) inputRefRight.current.value = "0";
+
+                                    ws.sendJsonMessage({
+                                        type: WS_SIGNALS.UPDATE_SCORE,
+                                        data: JSON.stringify({
+                                            left: 0,
+                                            right: 0,
+                                        }),
+                                    });
                                 }}
                             >
                                 <img src="/reset.png" />
                                 RESET
+                            </button>
+                        </div>
+                        <div className="scoreContainer">
+                            <div className="section">
+                                <div className="label">Left Team Score</div>
+                                <input type="number" className={`${mm.className}`} defaultValue={0.0} ref={inputRefLeft} />
+                            </div>
+                            <div className="section">
+                                <div className="label">Right Team Score</div>
+                                <input type="number" className={`${mm.className}`} defaultValue={0.0} ref={inputRefRight} />
+                            </div>
+                            <button
+                                className={`${mm.className}`}
+                                onClick={() => {
+                                    // console.log(inputRefLeft.current?.value, inputRefRight.current?.value);
+                                    ws.sendJsonMessage({
+                                        type: WS_SIGNALS.UPDATE_SCORE,
+                                        data: JSON.stringify({
+                                            left: parseFloat(inputRefLeft.current?.value ?? "0"),
+                                            right: parseFloat(inputRefRight.current?.value ?? "0"),
+                                        }),
+                                    });
+                                }}
+                            >
+                                Change Score
                             </button>
                         </div>
                     </div>
@@ -792,7 +830,8 @@ const Controller = () => {
                         gap: 20px;
                     }
 
-                    .buttonList button {
+                    .buttonList button,
+                    .scoreContainer button {
                         appearance: none;
                         border: none;
 
@@ -820,7 +859,8 @@ const Controller = () => {
                         gap: 20px;
                     }
 
-                    .buttonList button:hover {
+                    .buttonList button:hover,
+                    .scoreContainer button:hover {
                         background-image: linear-gradient(90deg, rgba(180, 146, 128, 1) 0%, rgba(190, 121, 156, 1) 100%);
                     }
 
@@ -1115,6 +1155,31 @@ const Controller = () => {
                         background-size: contain;
                         background-position: center right;
                         background-repeat: no-repeat;
+                    }
+
+                    .scoreContainer {
+                        flex: 1;
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+
+                        font-size: 18px;
+                    }
+
+                    .scoreContainer input {
+                        appearance: none;
+                        border: none;
+                        outline: none;
+
+                        padding: 20px;
+                        border-radius: 10px;
+
+                        background-color: rgba(0 0 0 / 0.8);
+                    }
+
+                    .scoreContainer input:focus {
+                        outline: solid 2px rgb(253, 203, 64);
                     }
                 `}</style>
             </div>

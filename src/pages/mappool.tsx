@@ -1,4 +1,4 @@
-import { useReducer, useEffect } from "react";
+import { useReducer, useEffect, useState } from "react";
 import Head from "next/head";
 import { useWebSocket } from "react-use-websocket/dist/lib/use-websocket";
 import { motion, AnimatePresence } from "framer-motion";
@@ -62,6 +62,9 @@ const WS_URL = "wss://express.satancraft.net:443/ws";
 
 const Mappool = () => {
     const [mappoolState, mappoolDispatcher] = useReducer(reducer, { ...initialState });
+    const [countDown, setCountDown] = useState(0);
+    const [timeoutId, setTimeoutId] = useState<NodeJS.Timer>();
+
     const ws = useWebSocket(WS_URL, {
         onOpen: () => {
             console.log("WebSocket connected!");
@@ -90,11 +93,27 @@ const Mappool = () => {
                         type: ACTION_TYPE.UPDATE_NAME,
                         data: team,
                     });
+                    break;
+                }
+                case WS_SIGNALS.START_SIGNALING: {
+                    setCountDown(30);
+                    clearInterval(timeoutId);
+
+                    const Id = setInterval(() => {
+                        setCountDown((countDown) => countDown - 1);
+                    }, 1000);
+                    setTimeoutId(Id);
+
+                    break;
                 }
             }
         },
         shouldReconnect: (closedEvent) => true,
     });
+
+    useEffect(() => {
+        if (countDown <= 0) clearInterval(timeoutId);
+    }, [countDown]);
     return (
         <>
             <Head>
@@ -109,7 +128,9 @@ const Mappool = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[mappoolState.team.left].avatar)}&w=1080&q=75)`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                teams_.teams[mappoolState.team.left].avatar
+                            )}&w=1080&q=75)`,
                         }}
                     ></div>
                     <div className="name">{teams_.teams[mappoolState.team.left].name}</div>
@@ -118,7 +139,9 @@ const Mappool = () => {
                     <div
                         className="icon"
                         style={{
-                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(teams_.teams[mappoolState.team.right].avatar)}&w=1080&q=75)`,
+                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                teams_.teams[mappoolState.team.right].avatar
+                            )}&w=1080&q=75)`,
                         }}
                     ></div>
                     <div className="name">{teams_.teams[mappoolState.team.right].name}</div>
@@ -131,6 +154,7 @@ const Mappool = () => {
                     <Player data={teams_.teams[mappoolState.team.right].members[0] as User} />
                     <Player data={teams_.teams[mappoolState.team.right].members[1] as User} />
                 </div>
+                <div className="countdown">00:{countDown.toString().padStart(2, "0")}</div>
                 <div className="mapList">
                     <AnimatePresence>
                         {mappoolState.maps.map((map, idx) => {
@@ -164,7 +188,9 @@ const Mappool = () => {
                         width: 1920px;
                         height: 1080px;
 
-                        {/* background-image: url(/MappoolBackground.png); */}
+                         {
+                            /* background-image: url(/MappoolBackground.png); */
+                        }
                         background-size: cover;
                         background-position: center;
 
@@ -265,7 +291,9 @@ const Mappool = () => {
                         min-height: 681px;
                         padding: 44px;
 
-                        background-color: #33212c;
+                         {
+                            /* background-color: #33212c; */
+                        }
                         border-radius: 10px;
 
                         display: grid;
@@ -274,6 +302,15 @@ const Mappool = () => {
 
                         overflow: hidden;
                         transition: ease-in-out 200ms;
+                        translate: 0 10px;
+                    }
+
+                    .countdown {
+                        position: absolute;
+                        top: 150px;
+
+                        font-size: 32px;
+                        font-weight: 700;
                     }
                 `}</style>
             </div>
