@@ -104,7 +104,7 @@ const Mappool = () => {
                 <link rel="icon" href="/Logo.svg" />
             </Head>
             <div className="App">
-                <video src="/Mappool Screen.webm" autoPlay={true}></video>
+                <video src="/Mappool Screen.webm" autoPlay muted loop></video>
                 <div className="team left">
                     <div
                         className="icon"

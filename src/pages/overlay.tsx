@@ -52,7 +52,7 @@ const Overlay = () => {
                 <link rel="icon" href="/Logo.svg" />
             </Head>
             <div className="App">
-                <video src="/Players Screen.webm" autoPlay></video>
+                <video src="/Players Screen.webm" autoPlay muted loop></video>
                 <div className="team left">
                     <div
                         className="icon"
