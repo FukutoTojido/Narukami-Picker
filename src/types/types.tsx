@@ -32,6 +32,7 @@ enum ACTION_TYPE {
     SWITCH_STATE,
     CHANGE_ROUND,
     START_SIGNALING,
+    RANDOM,
 }
 
 enum SIDE {
@@ -136,7 +137,7 @@ interface ControllerState {
     round: number;
     maps: MapState[];
     state: State;
-    phase: PHASE
+    phase: PHASE;
 }
 
 interface SetMap {
@@ -208,6 +209,11 @@ interface StartSignaling {
     type: ACTION_TYPE.START_SIGNALING;
 }
 
+interface Random {
+    type: ACTION_TYPE.RANDOM;
+    data: MapState[];
+}
+
 interface MapData {
     artist: string;
     catcode: string;
@@ -253,7 +259,8 @@ type Action =
     | ChangeBanLimit
     | SwitchState
     | ChangeRound
-    | StartSignaling;
+    | StartSignaling
+    | Random;
 
-export type { MapState, MainState, Action, MappoolState, TeamName, ControllerState, FilteredMapData, User };
+export type { MapState, MainState, Action, MappoolState, TeamName, ControllerState, FilteredMapData, User, MapData };
 export { VERSION, PHASE, CHART_DIFF, ACTION_TYPE, SIDE };

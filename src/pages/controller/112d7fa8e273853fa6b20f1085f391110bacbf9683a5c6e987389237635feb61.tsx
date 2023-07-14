@@ -3,7 +3,7 @@ import { useReducer, useState, useRef, useEffect } from "react";
 import { MuseoModerno } from "next/font/google";
 import { useWebSocket } from "react-use-websocket/dist/lib/use-websocket";
 
-import { ControllerState, Action, SIDE, ACTION_TYPE, VERSION, CHART_DIFF, FilteredMapData, PHASE, MapState } from "@/types/types";
+import { ControllerState, Action, SIDE, ACTION_TYPE, VERSION, CHART_DIFF, FilteredMapData, PHASE, MapState, MapData } from "@/types/types";
 import { WsAction, WS_SIGNALS } from "@/types/ws";
 
 import teams_ from "../../json/teams_.json";
@@ -41,42 +41,42 @@ const getDiff = (diff: string) => {
                 version: VERSION.DX,
                 diff: CHART_DIFF.RE_MASTER,
                 lvl: map.dx_lev_remas,
-            });
+            } as FilteredMapData);
         if (map.dx_lev_mas === diff)
             sameSetFiltering.push({
                 map,
                 version: VERSION.DX,
                 diff: CHART_DIFF.MASTER,
                 lvl: map.dx_lev_mas,
-            });
+            } as FilteredMapData);
         if (map.dx_lev_exp === diff)
             sameSetFiltering.push({
                 map,
                 version: VERSION.DX,
                 diff: CHART_DIFF.EXPERT,
                 lvl: map.dx_lev_exp,
-            });
+            } as FilteredMapData);
         if (map.lev_remas === diff)
             sameSetFiltering.push({
                 map,
                 version: VERSION.STANDARD,
                 diff: CHART_DIFF.RE_MASTER,
                 lvl: map.lev_remas,
-            });
+            } as FilteredMapData);
         if (map.lev_mas === diff)
             sameSetFiltering.push({
                 map,
                 version: VERSION.STANDARD,
                 diff: CHART_DIFF.MASTER,
                 lvl: map.lev_mas,
-            });
+            } as FilteredMapData);
         if (map.lev_exp === diff)
             sameSetFiltering.push({
                 map,
                 version: VERSION.STANDARD,
                 diff: CHART_DIFF.EXPERT,
                 lvl: map.lev_exp,
-            });
+            } as FilteredMapData);
         return accumulated.concat(sameSetFiltering);
     }, []);
 };
@@ -119,25 +119,30 @@ const reducer = (state: ControllerState, action: Action) => {
             return { ...state };
         }
         case ACTION_TYPE.SWITCH_STATE: {
-            state.state = action.data;
-            return { ...state };
+            // state.state = action.data;
+            return { ...state, state: action.data };
         }
         case ACTION_TYPE.CHANGE_ROUND: {
-            state.round = action.data;
-            return { ...state };
+            // state.round = action.data;
+            return { ...state, round: action.data };
         }
         case ACTION_TYPE.LOAD_MAPS: {
-            console.log(action.data);
-            state.maps = action.data;
-            return { ...state };
+            // console.log(action.data);
+            // state.maps = action.data;
+            return { ...state, maps: action.data };
         }
         case ACTION_TYPE.SET_MAP: {
             state.maps[action.data!.idx].state = action.data.state;
             return { ...state };
         }
         case ACTION_TYPE.CHANGE_PHASE: {
-            state.phase = action.data;
-            return { ...state };
+            return { ...state, phase: action.data };
+        }
+        case ACTION_TYPE.RANDOM: {
+            return { ...state, maps: action.data };
+        }
+        case ACTION_TYPE.RESET: {
+            return { ...state, maps: [] };
         }
         default: {
             return { ...state };
@@ -145,8 +150,8 @@ const reducer = (state: ControllerState, action: Action) => {
     }
 };
 
-// const WS_URL = "wss://express.satancraft.net:443/ws";
-const WS_URL = "ws://localhost:9727/ws";
+const WS_URL = "wss://express.satancraft.net:443/ws";
+// const WS_URL = "ws://localhost:9727/ws";
 
 const Controller = () => {
     const [controllerState, controllerDispatcher] = useReducer(reducer, initialState);
@@ -166,6 +171,9 @@ const Controller = () => {
                 case WS_SIGNALS.POST_RESULT: {
                     console.log(JSON.parse(mes.data));
                     const maps = JSON.parse(mes.data);
+
+                    if (maps.length === 0) break;
+
                     const currentMap = controllerState.maps.map((map, idx) => {
                         if (map.state === PHASE.NONE && maps[idx].state !== PHASE.NONE) map.state = maps[idx].state;
                         return map;
@@ -175,6 +183,10 @@ const Controller = () => {
                         type: ACTION_TYPE.LOAD_MAPS,
                         data: currentMap,
                     });
+                    break;
+                }
+                case WS_SIGNALS.REQ_RANDOM: {
+                    if (controllerState.state.acceptRand) getRandom();
                     break;
                 }
             }
@@ -188,6 +200,31 @@ const Controller = () => {
             setPopout(false);
             setCurrentSelected(SIDE.NONE);
         }
+    };
+
+    const getRandom = () => {
+        const cloneState = structuredClone(controllerState);
+        const maps = cloneState.maps.filter((map) => map.state === PHASE.NONE || map.state === PHASE.LOCK).sort(() => 0.5 - Math.random());
+        console.log(maps);
+        if (maps.length === 0) return;
+
+        const randomMap = maps[0];
+        randomMap.state = PHASE.PICK;
+
+        controllerDispatcher({
+            type: ACTION_TYPE.RANDOM,
+            data: [...cloneState.maps],
+        });
+
+        ws.sendJsonMessage({
+            type: WS_SIGNALS.UPDATE_RANDOM,
+            data: JSON.stringify(cloneState.maps),
+        });
+
+        ws.sendJsonMessage({
+            type: WS_SIGNALS.UPDATE_MAPPOOL,
+            data: JSON.stringify(cloneState.maps),
+        });
     };
 
     useEffect(() => {
@@ -227,7 +264,9 @@ const Controller = () => {
                             <div
                                 className="teamIconButton"
                                 style={{
-                                    backgroundImage: `url(${teams_.teams[controllerState.team.left].avatar})`,
+                                    backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                        teams_.teams[controllerState.team.left].avatar
+                                    )}&w=1080&q=75)`,
                                 }}
                             ></div>
                             {teams_.teams[controllerState.team.left].name}
@@ -242,7 +281,9 @@ const Controller = () => {
                             <div
                                 className="teamIconButton"
                                 style={{
-                                    backgroundImage: `url(${teams_.teams[controllerState.team.right].avatar})`,
+                                    backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                        teams_.teams[controllerState.team.right].avatar
+                                    )}&w=1080&q=75)`,
                                 }}
                             ></div>
                             {teams_.teams[controllerState.team.right].name}
@@ -280,6 +321,7 @@ const Controller = () => {
                                                 },
                                             });
                                         }}
+                                        key={idx}
                                     >
                                         <div
                                             className="mapCover"
@@ -383,7 +425,7 @@ const Controller = () => {
                                 <img src="/stopwatch.png" />
                                 Start Ban / Pick
                             </button>
-                            <button className={`${mm.className} random`}>
+                            <button className={`${mm.className} random`} onClick={() => getRandom()}>
                                 <img src="/random.png" />
                                 Random Pick
                             </button>
@@ -458,6 +500,9 @@ const Controller = () => {
                             <button
                                 className={`${mm.className} reset`}
                                 onClick={() => {
+                                    controllerDispatcher({
+                                        type: ACTION_TYPE.RESET,
+                                    });
                                     ws.sendJsonMessage({
                                         type: WS_SIGNALS.RESET,
                                     });
@@ -505,7 +550,9 @@ const Controller = () => {
                                             <div
                                                 className="teamIcon"
                                                 style={{
-                                                    backgroundImage: `url(${team.avatar})`,
+                                                    backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
+                                                        team.avatar
+                                                    )}&w=1080&q=75)`,
                                                 }}
                                             ></div>
                                             <div className="teamName">{team.name}</div>
@@ -656,7 +703,7 @@ const Controller = () => {
                     .middleCol .section {
                         font-size: 24px;
                     }
-                    
+
                     .section span {
                         font-weight: 700;
                     }

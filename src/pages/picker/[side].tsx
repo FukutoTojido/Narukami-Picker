@@ -48,43 +48,68 @@ const initialState: MainState = {
 const reducer = (state: MainState, action: Action) => {
     switch (action.type) {
         case ACTION_TYPE.LOAD_MAPS: {
-            state.maps = action.data!;
-            return { ...state };
+            // state.maps = action.data!;
+            return { ...state, maps: action.data };
         }
         case ACTION_TYPE.SET_MAP: {
-            if (state.lock.all) return { ...state };
+            const cloneState = structuredClone(state);
+            if (cloneState.lock.all) return { ...state };
 
-            state.maps[action.data!.idx].state = action.data.state;
-            state.lock.ban = state.maps.filter((map) => map.state === PHASE.BAN).length >= state.max.nBans;
-            state.lock.pick = state.maps.filter((map) => map.state === PHASE.PICK).length >= state.max.nPicks;
+            cloneState.maps[action.data!.idx].state = action.data.state;
+            cloneState.lock.ban = cloneState.maps.filter((map) => map.state === PHASE.BAN).length >= cloneState.max.nBans;
+            cloneState.lock.pick = cloneState.maps.filter((map) => map.state === PHASE.PICK).length >= cloneState.max.nPicks;
 
-            return { ...state };
+            return { ...cloneState };
         }
         case ACTION_TYPE.RESET: {
-            state.maps = initialState.maps;
-            return { ...state };
+            return { ...state, maps: initialState.maps };
         }
         case ACTION_TYPE.CHANGE_PHASE: {
-            state.phase = action.data;
-            return { ...state };
+            return { ...state, phase: action.data };
         }
         case ACTION_TYPE.LOCK_ALL: {
-            state.lock.all = action.data;
-            return { ...state };
+            // state.lock.all = action.data;
+            return {
+                ...state,
+                lock: {
+                    ...state.lock,
+                    all: action.data,
+                },
+            };
         }
         case ACTION_TYPE.IDLE: {
-            state.lock.idle = action.data;
-            return { ...state };
+            // state.lock.idle = action.data;
+            return {
+                ...state,
+                lock: {
+                    ...state.lock,
+                    idle: action.data,
+                },
+            };
         }
         case ACTION_TYPE.CHANGE_BAN_LIMIT: {
-            state.max.nBans = action.data;
-            return { ...state };
+            // state.max.nBans = action.data;
+            return {
+                ...state,
+                max: {
+                    ...state.max,
+                    nBans: action.data,
+                },
+            };
         }
         case ACTION_TYPE.START_SIGNALING: {
-            state.lock.ban = false;
-            state.lock.pick = false;
-            state.phase = PHASE.BAN;
-            return { ...state };
+            // state.lock.ban = false;
+            // state.lock.pick = false;
+            // state.phase = PHASE.BAN;
+            return {
+                ...state,
+                phase: PHASE.BAN,
+                lock: {
+                    ...state.lock,
+                    ban: false,
+                    pick: false,
+                },
+            };
         }
         default: {
             return { ...state };
@@ -96,8 +121,8 @@ const upFirstChar = (str: string): string => {
     return str.at(0)?.toUpperCase() + str.slice(1);
 };
 
-// const WS_URL = "wss://express.satancraft.net:443/ws";
-const WS_URL = "ws://localhost:9727/ws";
+const WS_URL = "wss://express.satancraft.net:443/ws";
+// const WS_URL = "ws://localhost:9727/ws";
 
 const Picker = () => {
     const [pickerState, pickerDispatch] = useReducer(reducer, { ...initialState });
@@ -148,6 +173,14 @@ const Picker = () => {
                     break;
                 }
                 case WS_SIGNALS.SHUFFLE: {
+                    const maps: MapState[] = JSON.parse(mes.data);
+                    pickerDispatch({
+                        type: ACTION_TYPE.LOAD_MAPS,
+                        data: maps,
+                    });
+                    break;
+                }
+                case WS_SIGNALS.UPDATE_RANDOM: {
                     const maps: MapState[] = JSON.parse(mes.data);
                     pickerDispatch({
                         type: ACTION_TYPE.LOAD_MAPS,
@@ -255,7 +288,11 @@ const Picker = () => {
                                 >
                                     Switch Phase
                                 </button>
-                                <button className={mm.className} disabled={!pickerState.lock.all}>
+                                <button className={mm.className} disabled={!pickerState.lock.all} onClick={() => {
+                                    ws.sendJsonMessage({
+                                        type: WS_SIGNALS.REQ_RANDOM
+                                    })
+                                }}>
                                     Random
                                 </button>
                             </div>
