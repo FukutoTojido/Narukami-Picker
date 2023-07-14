@@ -57,8 +57,8 @@ const reducer = (state: MappoolState, action: Action) => {
     }
 };
 
-// const WS_URL = "wss://express.satancraft.net:443/ws";
-const WS_URL = "ws://localhost:9727/ws";
+const WS_URL = "wss://express.satancraft.net:443/ws";
+// const WS_URL = "ws://localhost:9727/ws";
 
 const Mappool = () => {
     const [mappoolState, mappoolDispatcher] = useReducer(reducer, { ...initialState });
@@ -104,6 +104,7 @@ const Mappool = () => {
                 <link rel="icon" href="/Logo.svg" />
             </Head>
             <div className="App">
+                <video src="/Mappool Screen.webm" autoPlay={true}></video>
                 <div className="team left">
                     <div
                         className="icon"
@@ -152,6 +153,9 @@ const Mappool = () => {
                     </AnimatePresence>
                 </div>
                 <style jsx>{`
+                    video {
+                        position: absolute;
+                    }
                     .App {
                         position: absolute;
                         top: 0;
@@ -160,7 +164,7 @@ const Mappool = () => {
                         width: 1920px;
                         height: 1080px;
 
-                        background-image: url(/MappoolBackground.png);
+                        {/* background-image: url(/MappoolBackground.png); */}
                         background-size: cover;
                         background-position: center;
 

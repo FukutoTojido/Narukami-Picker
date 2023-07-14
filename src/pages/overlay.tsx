@@ -19,8 +19,8 @@ const reducer = (state: TeamName, action: Action) => {
     return { ...state };
 };
 
-// const WS_URL = "wss://express.satancraft.net:443/ws";
-const WS_URL = "ws://localhost:9727/ws";
+const WS_URL = "wss://express.satancraft.net:443/ws";
+// const WS_URL = "ws://localhost:9727/ws";
 
 const Overlay = () => {
     const [overlayState, overlayDispatcher] = useReducer(reducer, { ...initialState });
@@ -52,6 +52,7 @@ const Overlay = () => {
                 <link rel="icon" href="/Logo.svg" />
             </Head>
             <div className="App">
+                <video src="/Players Screen.webm" autoPlay></video>
                 <div className="team left">
                     <div
                         className="icon"
@@ -80,7 +81,7 @@ const Overlay = () => {
                             width: 1920px;
                             height: 1080px;
 
-                            background-image: url(/OverlayBackground.png);
+                            {/* background-image: url(/OverlayBackground.png); */}
                             background-size: cover;
                             background-position: center;
                         }
