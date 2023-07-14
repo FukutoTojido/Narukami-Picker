@@ -409,6 +409,11 @@ const Controller = () => {
                                             type: ACTION_TYPE.CHANGE_ROUND,
                                             data: controllerState.round + 1,
                                         });
+
+                                        ws.sendJsonMessage({
+                                            type: WS_SIGNALS.CHANGE_BAN_LIMIT,
+                                            data: roundList[controllerState.round + 1].nBans,
+                                        });
                                     }}
                                 >
                                     +

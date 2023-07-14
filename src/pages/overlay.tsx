@@ -16,6 +16,7 @@ type OverlayState = {
         left: number;
         right: number;
     };
+    round: string;
 };
 
 const initialState: OverlayState = {
@@ -25,6 +26,7 @@ const initialState: OverlayState = {
         left: 0,
         right: 0,
     },
+    round: "",
 };
 
 const reducer = (state: OverlayState, action: Action) => {
@@ -87,7 +89,7 @@ const Overlay = () => {
                             )}&w=1080&q=75)`,
                         }}
                     ></div>
-                    <div className="accuracy">{overlayState.score.left.toFixed(6)}%</div>
+                    <div className="accuracy">{overlayState.score.left.toFixed(4)}%</div>
                     <div className="name">{teams_.teams[overlayState.left].name}</div>
                 </div>
                 <div className="team right">
@@ -99,7 +101,7 @@ const Overlay = () => {
                             )}&w=1080&q=75)`,
                         }}
                     ></div>
-                    <div className="accuracy">{overlayState.score.right.toFixed(6)}%</div>
+                    <div className="accuracy">{overlayState.score.right.toFixed(4)}%</div>
                     <div className="name">{teams_.teams[overlayState.right].name}</div>
                 </div>
                 <style jsx>
