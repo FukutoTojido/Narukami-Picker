@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useWebSocket } from "react-use-websocket/dist/lib/use-websocket";
+import Head from "next/head";
 
 import { WS_SIGNALS } from "@/types/ws";
 
@@ -26,60 +27,68 @@ const Audience = () => {
         },
     });
     return (
-        <div className="App">
-            <video src="/Audiences Screen.webm" autoPlay muted loop></video>
-            <div className="team left">
-                <div className="name">{teams_.teams[left].name}</div>
+        <>
+            <Head>
+                <title>Narukami Audience</title>
+                <meta name="description" content="Audience Overlay for Narukami Tournament" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="icon" href="/Logo.svg" />
+            </Head>
+            <div className="App">
+                <video src="/Audiences Screen.webm" autoPlay muted loop></video>
+                <div className="team left">
+                    <div className="name">{teams_.teams[left].name}</div>
+                </div>
+                <div className="team right">
+                    <div className="name">{teams_.teams[right].name}</div>
+                </div>
+                <style jsx>
+                    {`
+                        .team {
+                            position: absolute;
+                            top: 96px;
+                            width: 500px;
+
+                            height: 74px;
+
+                            border-radius: 10px;
+                        }
+
+                        .team.left {
+                            left: 64px;
+                            flex-direction: row;
+                            padding-right: 20px;
+                        }
+
+                        .team.right {
+                            right: 64px;
+                            flex-direction: row-reverse;
+                            padding-left: 20px;
+                        }
+
+                        .name {
+                            position: absolute;
+                            bottom: 85px;
+
+                            font-size: 32px;
+                            font-weight: 700;
+                            font-style: italic;
+                            color: #fef3f3;
+                        }
+
+                        .team.left .name {
+                            left: 0;
+                            text-align: left;
+                        }
+
+                        .team.right .name {
+                            right: 0;
+                            text-align: right;
+                        }
+                    `}
+                </style>
             </div>
-            <div className="team right">
-                <div className="name">{teams_.teams[right].name}</div>
-            </div>
-            <style jsx>
-                {`
-                    .team {
-                        position: absolute;
-                        top: 96px;
-                        width: 500px;
-
-                        height: 74px;
-
-                        border-radius: 10px;
-                    }
-
-                    .team.left {
-                        left: 64px;
-                        flex-direction: row;
-                        padding-right: 20px;
-                    }
-
-                    .team.right {
-                        right: 64px;
-                        flex-direction: row-reverse;
-                        padding-left: 20px;
-                    }
-
-                    .name {
-                        position: absolute;
-                        bottom: 85px;
-
-                        font-size: 32px;
-                        font-weight: 700;
-                        font-style: italic;
-                        color: #fef3f3;
-                    }
-
-                    .team.left .name {
-                        left: 0;
-                        text-align: left;
-                    }
-
-                    .team.right .name {
-                        right: 0;
-                        text-align: right;
-                    }
-                `}
-            </style>
-        </div>
+        </>
     );
 };
 
