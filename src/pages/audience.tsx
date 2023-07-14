@@ -21,7 +21,7 @@ const Audience = () => {
             if (mes.type === WS_SIGNALS.UPDATE_TEAM) {
                 const data = JSON.parse(mes.data);
                 setLeft(data.left);
-                setLeft(data.right);
+                setRight(data.right);
             }
         },
     });
