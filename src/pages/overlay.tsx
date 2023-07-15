@@ -184,7 +184,7 @@ const Overlay = () => {
                             font-style: italic;
                             color: #fef3f3;
 
-                            letter-spacing: 0.1em;
+                            letter-spacing: 2.24px;
                         }
 
                         .team.left .name {
@@ -211,11 +211,11 @@ const Overlay = () => {
                             left: 0;
 
                             padding: 30px;
-                            font-size: 48px;
+                            font-size: 40px;
                             font-weight: 600;
                             color: #fef3f3;
 
-                            letter-spacing: 0.2em;
+                            letter-spacing: 2.8px;
                         }
 
                         .roundName:after {
@@ -223,11 +223,12 @@ const Overlay = () => {
                             position: absolute;
 
                             bottom: -20px;
-                            right: 0;
+                            left: 0;
 
                             font-size: 20px;
                             letter-spacing: 0.1em;
                             font-weight: 400;
+                            font-style: italic;
 
                             padding: 30px;
                             opacity: 0.5;
