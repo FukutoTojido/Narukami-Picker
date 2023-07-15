@@ -146,7 +146,7 @@ const Picker = () => {
                     break;
                 }
                 case WS_SIGNALS.START_SIGNALING: {
-                    setCountDown(30);
+                    setCountDown(60);
                     clearInterval(timeoutId);
 
                     const Id = setInterval(() => {
