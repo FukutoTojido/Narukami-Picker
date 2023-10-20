@@ -1,8 +1,8 @@
 import { MapState } from "@/types/types";
-import { VERSION, PHASE, CHART_DIFF, ACTION_TYPE } from "@/types/types";
+import { VERSION, PHASE, CHART_DIFF, ACTION_TYPE, SIDE } from "@/types/types";
 
-const MapNode = (props: { map: MapState | undefined }) => {
-    if (!props.map) {
+const MapNode = ({ data, side }: { data: MapState | null; side?: SIDE }) => {
+    if (!data) {
         return (
             <div className="mapNode">
                 <style jsx>{`
@@ -31,30 +31,32 @@ const MapNode = (props: { map: MapState | undefined }) => {
             <div
                 className="background"
                 style={{
-                    backgroundImage: `linear-gradient(-90deg, rgba(127, 109, 116, 1) 20%, rgba(127, 109, 116, .4)), url(https://maimaidx-eng.com/maimai-mobile/img/Music/${props.map.image})`,
+                    backgroundImage: `linear-gradient(-90deg, ${
+                        side ? (side === SIDE.LEFT ? "#f23a6599" : "#3aa6f299") : "rgba(127, 109, 116, 1)"
+                    } 20%, rgba(0 0 0 / .7)), url(https://maimaidx-eng.com/maimai-mobile/img/Music/${data.image})`,
                 }}
             ></div>
             <div
                 className="mapCover"
                 style={{
-                    backgroundImage: `url(https://maimaidx-eng.com/maimai-mobile/img/Music/${props.map.image})`,
+                    backgroundImage: `url(https://maimaidx-eng.com/maimai-mobile/img/Music/${data.image})`,
                 }}
             ></div>
             <div className="metadata">
-                <div className="title">{props.map.title}</div>
-                <div className="artist">{props.map.artist}</div>
-                <div className={`type ${props.map.type === CHART_DIFF.RE_MASTER ? "REMAS" : props.map.type}`}>{props.map.type}</div>
+                <div className="title">{data.title}</div>
+                <div className="artist">{data.artist}</div>
+                <div className={`type ${data.type === CHART_DIFF.RE_MASTER ? "REMAS" : data.type}`}>{data.type}</div>
             </div>
             <div
                 className="version"
                 style={{
-                    backgroundImage: `url(/${props.map.version}.png)`,
+                    backgroundImage: `url(/${data.version}.png)`,
                 }}
             ></div>
             <div className="level">
-                Lv<span>{props.map.lvl}</span>
+                Lv<span>{data.lvl}</span>
             </div>
-            <div className={`state ${props.map.state}`}></div>
+            <div className={`state ${data.state}`}></div>
 
             <style jsx>{`
                 .mapNode {
@@ -148,7 +150,6 @@ const MapNode = (props: { map: MapState | undefined }) => {
                 }
 
                 .REMAS {
-                    
                 }
 
                 .level {
@@ -211,7 +212,7 @@ const MapNode = (props: { map: MapState | undefined }) => {
 
                 .state.LOCK {
                     opacity: 1;
-                    background-color: rgba(0 0 0 / .8);
+                    background-color: rgba(0 0 0 / 0.8);
                 }
             `}</style>
         </div>

@@ -1,0 +1,195 @@
+video {
+    position: absolute;
+}
+.App {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 1920px;
+    height: 1080px;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.team {
+    position: absolute;
+    top: 96px;
+    width: 500px;
+
+    height: 74px;
+
+    border-radius: 10px;
+}
+
+.team.left {
+    left: 64px;
+    flex-direction: row;
+    padding-right: 20px;
+}
+
+.team.right {
+    right: 64px;
+    flex-direction: row-reverse;
+    padding-left: 20px;
+}
+
+.icon {
+    position: absolute;
+    top: 0;
+
+    width: 144px;
+    height: 100%;
+
+    background-color: rgba(0 0 0 /0.5);
+    border-radius: 10px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.team.left .icon {
+    left: 0;
+}
+
+.team.right .icon {
+    right: 0;
+}
+
+.name {
+    position: absolute;
+    bottom: 85px;
+
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    color: #fef3f3;
+
+    letter-spacing: 2.24px;
+}
+
+.team.left .name {
+    left: 0;
+    text-align: left;
+}
+
+.team.right .name {
+    right: 0;
+    text-align: right;
+}
+
+.picked {
+    position: absolute;
+    top: 549px;
+
+    width: 400px;
+    height: 309px;
+
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.picked.left {
+    left: 64px;
+}
+
+.picked.right {
+    right: 64px;
+}
+
+.mapList {
+    width: 720px;
+    min-height: 681px;
+    padding: 44px;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    overflow: hidden;
+    transition: ease-in-out 200ms;
+    translate: 0 10px;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.list {
+    & {
+        display: flex;
+        gap: 10px;
+    }
+
+    .left,
+    .right {
+        flex: 1;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.left .mapNode {
+    background-image: linear-gradient(-90deg, #f23a6544 20%, rgba(0 0 0 / 0.7));
+}
+
+.right .mapNode {
+    background-image: linear-gradient(-90deg, #3aa6f244 20%, rgba(0 0 0 / 0.7));
+}
+
+.banList .mapNode {
+
+}
+
+.countdown {
+    position: absolute;
+    top: 150px;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.roundName {
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+
+    padding: 30px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #fef3f3;
+
+    letter-spacing: 2.8px;
+}
+
+.roundName:after {
+    content: "Mappool Screen";
+    position: absolute;
+
+    bottom: -20px;
+    left: 0;
+
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    font-style: italic;
+
+    padding: 30px;
+    opacity: 0.5;
+}

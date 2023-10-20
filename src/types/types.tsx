@@ -1,3 +1,5 @@
+import { NullLiteral } from "typescript";
+
 enum VERSION {
     DX = "DX",
     STANDARD = "STANDARD",
@@ -91,13 +93,19 @@ interface UserGame {
 }
 
 interface TeamName {
-    left: number;
-    right: number;
+    left: number | string;
+    right: number | string;
 }
 
 interface MapState {
     artist: string;
     title: string;
+    name?: {
+        orig: string;
+        romaji: string;
+        eng: string;
+        alias: string[] | null;
+    };
     lvl: string;
     type: CHART_DIFF;
     version: VERSION;
@@ -122,12 +130,12 @@ interface MainState {
 
 interface MappoolState {
     team: TeamName;
-    maps: MapState[];
+    maps: BanPickState;
     picked: {
         left: MapState[];
         right: MapState[];
     };
-    round: string
+    round: number;
 }
 
 interface State {
@@ -135,10 +143,23 @@ interface State {
     acceptRand: boolean;
 }
 
+interface BanPickState {
+    bans: {
+        left: (MapState | null)[];
+        right: (MapState | null)[];
+    };
+    picks: {
+        left: MapState | null;
+        right: MapState | null;
+    };
+    random: MapState | null;
+    secret?: MapState | null;
+}
+
 interface ControllerState {
     team: TeamName;
     round: number;
-    maps: MapState[];
+    maps: BanPickState;
     state: State;
     phase: PHASE;
 }
@@ -146,8 +167,16 @@ interface ControllerState {
 interface SetMap {
     type: ACTION_TYPE.SET_MAP;
     data: {
-        idx: number;
-        state: PHASE;
+        bans: {
+            left: (MapState | null)[];
+            right: (MapState | null)[];
+        };
+        picks: {
+            left: MapState | null;
+            right: MapState | null;
+        };
+        random: MapState | null;
+        secret?: MapState | null;
     };
 }
 
@@ -182,7 +211,7 @@ interface Idle {
 
 interface UpdateMappool {
     type: ACTION_TYPE.UPDATE_MAPPOOL;
-    data: MapState[];
+    data: BanPickState;
 }
 
 interface UpdateName {
@@ -227,7 +256,7 @@ interface UpdateScore {
 
 interface UpdateRound {
     type: ACTION_TYPE.UPDATE_ROUND;
-    data: string;
+    data: number;
 }
 
 interface MapData {
@@ -252,6 +281,12 @@ interface MapData {
     idx: {
         dx: string | null;
         sta: string | null;
+    };
+    name?: {
+        orig: string;
+        romaji: string;
+        eng: string;
+        alias: string[] | null;
     };
 }
 
@@ -280,5 +315,5 @@ type Action =
     | UpdateScore
     | UpdateRound;
 
-export type { MapState, MainState, Action, MappoolState, TeamName, ControllerState, FilteredMapData, User, MapData };
+export type { MapState, MainState, Action, MappoolState, TeamName, ControllerState, FilteredMapData, User, MapData, BanPickState };
 export { VERSION, PHASE, CHART_DIFF, ACTION_TYPE, SIDE };

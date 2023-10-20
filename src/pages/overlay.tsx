@@ -10,23 +10,46 @@ import teams from "../json/team.json";
 import teams_ from "../json/teams_.json";
 
 type OverlayState = {
-    left: number;
-    right: number;
+    left: number | string;
+    right: number | string;
     score: {
         left: number;
         right: number;
     };
-    round: string;
+    round: number;
 };
 
+const roundList = [
+    {
+        name: "Round of 16",
+        nBans: 1,
+        limit: ["12+", "13"],
+    },
+    {
+        name: "Quarter Finals",
+        nBans: 1,
+        limit: ["13", "13+"],
+    },
+    {
+        name: "Semi Finals",
+        nBans: 2,
+        limit: ["13+", "14"],
+    },
+    {
+        name: "Finals",
+        nBans: 2,
+        limit: ["14", "14+"],
+    },
+];
+
 const initialState: OverlayState = {
-    left: 0,
-    right: 1,
+    left: "",
+    right: "",
     score: {
         left: 0,
         right: 0,
     },
-    round: "Quarter Finals",
+    round: 0,
 };
 
 const reducer = (state: OverlayState, action: Action) => {
@@ -56,7 +79,7 @@ const Overlay = () => {
         onMessage: (event) => {
             const mes = JSON.parse(event.data);
             switch (mes.type) {
-                case WS_SIGNALS.UPDATE_TEAM: {
+                case WS_SIGNALS.UPDATE_NAME: {
                     overlayDispatcher({
                         type: ACTION_TYPE.UPDATE_NAME,
                         data: JSON.parse(mes.data),
@@ -71,9 +94,11 @@ const Overlay = () => {
                     break;
                 }
                 case WS_SIGNALS.UPDATE_ROUND: {
+                    const idx = roundList.findIndex((round) => round.name === mes.data);
+
                     overlayDispatcher({
                         type: ACTION_TYPE.UPDATE_ROUND,
-                        data: mes.data,
+                        data: idx,
                     });
                 }
             }
@@ -91,30 +116,14 @@ const Overlay = () => {
             </Head>
             <div className="App">
                 <video src="/Players Screen.webm" autoPlay muted loop></video>
-                <div className="roundName">{overlayState.round}</div>
+                <div className="roundName">{roundList[overlayState.round].name}</div>
                 <div className="team left">
-                    <div
-                        className="icon"
-                        style={{
-                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
-                                teams_.teams[overlayState.left].avatar
-                            )}&w=1080&q=75)`,
-                        }}
-                    ></div>
+                    <div className="name">{overlayState.left}</div>
                     <div className="accuracy">{overlayState.score.left.toFixed(4)}%</div>
-                    <div className="name">{teams_.teams[overlayState.left].name}</div>
                 </div>
                 <div className="team right">
-                    <div
-                        className="icon"
-                        style={{
-                            backgroundImage: `url(https://narukami.mune.moe/_next/image?url=${encodeURIComponent(
-                                teams_.teams[overlayState.right].avatar
-                            )}&w=1080&q=75)`,
-                        }}
-                    ></div>
+                    <div className="name">{overlayState.right}</div>
                     <div className="accuracy">{overlayState.score.right.toFixed(4)}%</div>
-                    <div className="name">{teams_.teams[overlayState.right].name}</div>
                 </div>
                 <style jsx>
                     {`
@@ -135,50 +144,26 @@ const Overlay = () => {
 
                         .team {
                             position: absolute;
-                            top: 96px;
-
-                            height: 74px;
+                            top: 37px;
 
                             display: flex;
-                            align-items: center;
-                            gap: 0px;
-
-                            background: rgba(0 0 0 / 0.5);
-
-                            border-radius: 10px;
-
-                             {
-                                /* overflow: hidden; */
-                            }
+                            flex-direction: column;
+                            gap: 10px;
                         }
 
                         .team.left {
                             left: 64px;
-                            flex-direction: row;
-                            padding-right: 20px;
+                            align-items: flex-start;
                         }
 
                         .team.right {
                             right: 64px;
-                            flex-direction: row-reverse;
-                            padding-left: 20px;
-                        }
-
-                        .icon {
-                            width: 144px;
-                            height: 100%;
-
-                            background-color: rgba(0 0 0 /0.5);
-                            border-radius: 10px;
-
-                            background-size: cover;
-                            background-position: center;
+                            align-items: flex-end;
                         }
 
                         .name {
-                            position: absolute;
-                            bottom: 85px;
-
+                            height: 40px;
+                            line-height: 40px;
                             font-size: 32px;
                             font-weight: 700;
                             font-style: italic;
@@ -188,27 +173,34 @@ const Overlay = () => {
                         }
 
                         .team.left .name {
-                            left: 0;
                             text-align: left;
                         }
 
                         .team.right .name {
-                            right: 0;
                             text-align: right;
                         }
 
                         .accuracy {
-                            width: 200px;
-                            text-align: center;
-                            font-size: 23px;
+                            width: 220px;
+                            border-radius: 10px;
+
+                            padding: 2px 0;
+
+                            font-size: 20px;
                             font-style: italic;
                             letter-spacing: 0.1em;
+
+                            text-align: center;
+
+                            {/* background: rgba(0 0 0 / 0.5); */}
                         }
 
                         .roundName {
                             position: absolute;
                             bottom: 0;
                             left: 0;
+
+                            width: 400px;
 
                             padding: 30px;
                             font-size: 40px;

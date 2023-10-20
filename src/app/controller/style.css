@@ -1,0 +1,806 @@
+.App {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    padding: 30px;
+
+    background-image: linear-gradient(0deg, #3d313b, #593e44);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0 0 0 /0.5);
+    border-radius: 10px;
+
+    display: flex;
+}
+
+.leftCol {
+    width: 25%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    border-right: solid 2px rgba(255 255 255 /0.2);
+}
+
+.logo {
+    width: 60%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url(/Logo.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.leftCol button {
+    appearance: none;
+    border: none;
+    background: none;
+
+    width: 100%;
+    height: 100px;
+
+    padding: 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.leftCol button:active {
+    opacity: 0.5;
+}
+
+.leftCol button.left:hover {
+    background-image: linear-gradient(90deg, rgba(180, 146, 128, 1) 0%, rgba(190, 121, 156, 1) 100%);
+}
+
+.leftCol button.right:hover {
+    background-image: linear-gradient(90deg, rgb(72, 195, 204) 0%, rgb(89, 154, 214) 100%);
+}
+
+.leftCol button.left {
+    background-image: linear-gradient(90deg, rgba(123, 89, 118, 1) 0%, rgba(119, 86, 93, 1) 100%);
+}
+
+.leftCol button.right {
+    background-image: linear-gradient(90deg, rgb(49, 90, 167) 0%, rgb(64, 152, 179) 100%);
+}
+
+.teamIconButton {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    background-color: rgba(0 0 0 /0.5);
+    border-radius: 10px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+.rightCol {
+    flex: 1;
+    height: 100%;
+
+    padding: 30px;
+
+    font-size: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.section {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.middleCol .section {
+    font-size: 24px;
+}
+
+.section span {
+    font-weight: 700;
+}
+
+.section input[type="checkbox"] {
+    position: relative;
+    appearance: none;
+
+    width: 50px;
+    height: 20px;
+
+    opacity: 0.5;
+    transition: ease-in-out 200ms;
+}
+
+.section input[type="checkbox"]:checked {
+    opacity: 1;
+}
+
+.section input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto 0;
+
+    width: 100%;
+    height: 20px;
+
+    border-radius: 20px;
+    outline: solid 4px #f5cdd7;
+}
+
+.section input[type="checkbox"]:after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 5px;
+
+    width: 10px;
+    height: 10px;
+
+    margin: auto 0;
+
+    background: #f5cdd7;
+    border-radius: 10px;
+
+    transition: ease-in-out 200ms;
+}
+
+.section input[type="checkbox"]:checked:after {
+    left: 35px;
+}
+
+.roundSwitch {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.roundSwitch button {
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    background: transparent;
+
+    outline: solid 2px white;
+    color: white;
+
+    border-radius: 10px;
+}
+
+.buttonList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.buttonList button,
+.scoreContainer button {
+    appearance: none;
+    border: none;
+
+    width: 1fr;
+
+    padding: 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    user-select: none;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    background-image: linear-gradient(90deg, rgba(123, 89, 118, 1) 0%, rgba(119, 86, 93, 1) 100%);
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttonList button:hover,
+.scoreContainer button:hover {
+    background-image: linear-gradient(90deg, rgba(180, 146, 128, 1) 0%, rgba(190, 121, 156, 1) 100%);
+}
+
+.buttonList button.reset {
+    background-image: linear-gradient(90deg, rgb(184, 60, 97) 0%, rgb(235, 34, 61) 100%);
+}
+
+.buttonList button.reset:hover {
+    background-image: linear-gradient(90deg, rgb(223, 83, 160) 0%, rgb(233, 79, 100) 100%);
+}
+
+.buttonList button.shuffle {
+    grid-column: 1 / span 2;
+    background-image: linear-gradient(90deg, rgb(49, 90, 167) 0%, rgb(64, 152, 179) 100%);
+}
+
+.buttonList button.shuffle:hover {
+    background-image: linear-gradient(90deg, rgb(72, 195, 204) 0%, rgb(89, 154, 214) 100%);
+}
+
+.popoutContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0 0 0 /0.5);
+}
+
+.popout {
+    width: 60%;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    background-image: linear-gradient(0deg, #3d313b, #593e44);
+
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.popout button {
+    appearance: none;
+    border: none;
+
+    padding: 10px 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 10px;
+
+    user-select: none;
+
+    background-color: rgba(0 0 0 /0.5);
+}
+
+.popout button:hover {
+    background-color: rgba(255 255 255 /0.2);
+}
+
+.teamList {
+    width: 100%;
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-content: flex-start;
+}
+
+.team {
+    width: 1fr;
+    height: 80px;
+
+    padding: 20px;
+
+    background-color: rgba(0 0 0 /0.5);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    overflow: hidden;
+    user-select: none;
+}
+
+.team:hover {
+    background-color: rgba(255 255 255 /0.2);
+}
+
+.teamIcon {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+
+    background-color: rgba(0 0 0 /0.5);
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.teamName {
+    font-size: 12px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.middleCol {
+    width: 45%;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mapList {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list {
+    width: 100%;
+
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.mapList .label {
+    width: 100%;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.list .left,
+.list .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+
+    overflow: hidden;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.list .left {
+    border: solid 2px transparent;
+}
+
+.list .right {
+    border: solid 2px transparent;
+}
+
+.mapList button {
+    border: none;
+    background: none;
+
+    border-radius: 10px;
+    text-align: unset;
+
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.mapList button:hover .mapNode::after {
+    border: solid 3px rgb(253, 203, 64);
+}
+
+.mapNode::after {
+    position: absolute;
+    content: "";
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+}
+
+.left .mapNode {
+    background-image: linear-gradient(-90deg, #f23a6544 20%, rgba(0 0 0 / 0.7));
+}
+
+.right .mapNode {
+    background-image: linear-gradient(-90deg, #3aa6f244 20%, rgba(0 0 0 / 0.7));
+}
+
+.mapNode {
+    position: relative;
+
+    width: auto;
+    height: 100px;
+    padding: 15px;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    gap: 20px;
+
+    overflow: hidden;
+    user-select: none;
+}
+
+.state {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    opacity: 0;
+
+    border: solid 4px transparent;
+
+    transition: ease-in-out 100ms;
+}
+
+.state.BAN {
+    opacity: 1;
+    border: solid 4px #f23a65;
+}
+
+.state.PICK {
+    opacity: 1;
+    border: solid 4px #3aa6f2;
+}
+
+.state.NONE.lock {
+    opacity: 1;
+    background-color: rgba(0 0 0 /0.5);
+}
+
+.mapCover {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 10px;
+}
+
+.metadata {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.metadata * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    text-shadow: 0 1px 1px black;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fdedf9;
+}
+
+.artist {
+    font-size: 12px;
+    font-weight: 600;
+    color: #dabfc5;
+}
+
+.type {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.BASIC {
+    color: #80d24d;
+}
+
+.ADVANCED {
+    color: #f0bc30;
+}
+
+.EXPERT {
+    color: #f3898e;
+}
+
+.MASTER {
+    color: #a869df;
+}
+
+.REMAS {
+    color: #d3abf5;
+}
+
+.level {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding: 10px 15px;
+    font-style: italic;
+    color: #faeef4;
+}
+
+.level span {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.version {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    margin: 10px;
+
+    width: 60px;
+    height: 12px;
+
+    background-color: white;
+    border-radius: 6px;
+
+    background-size: contain;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.scoreContainer {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    font-size: 18px;
+}
+
+.scoreContainer input,
+input[type="text"] {
+    appearance: none;
+    border: none;
+    outline: none;
+
+    padding: 20px;
+    border-radius: 10px;
+
+    background-color: rgba(0 0 0 / 0.8);
+}
+
+.scoreContainer input:focus,
+input[type="text"]:focus {
+    outline: solid 2px rgb(253, 203, 64);
+}
+
+dialog {
+    border: none;
+    background: none;
+
+    margin: auto;
+}
+
+dialog:focus {
+    outline: none;
+}
+
+::backdrop {
+    background-color: rgba(0 0 0 /0.5);
+}
+
+.mapSearch {
+    width: 1200px;
+    height: 700px;
+
+    padding: 30px;
+
+    border-radius: 10px;
+    background-image: linear-gradient(0deg, #3d313b, #593e44);
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.mapSearch button {
+    background: none;
+    border: none;
+}
+
+.closeButton {
+    width: 30px;
+    aspect-ratio: 1 / 1;
+
+    background-image: url(/close.png);
+    background-size: contain;
+
+    padding: 10px;
+}
+.mapSearch button:hover {
+    filter: drop-shadow(0 0 2px white);
+}
+
+input[type="text"].searchBar {
+    width: 100%;
+    padding: 15px;
+}
+
+.result {
+    width: 100%;
+    flex: 1;
+
+    padding: 5px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+
+    overflow: auto;
+}
+
+.result button {
+    overflow: hidden;
+    border: none;
+    background: none;
+
+    border-radius: 10px;
+    text-align: unset;
+}
+
+.result button:hover {
+    filter: unset;
+}
+
+.mapNode::after {
+    content: "";
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.result button:hover .mapNode::after {
+    border: solid 3px rgb(253, 203, 64);
+}
+
+.navigator {
+    margin-top: auto;
+
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.indicator {
+    margin-right: auto;
+}
+
+.back {
+    width: 30px;
+    aspect-ratio: 1 / 1;
+
+    background-image: url(/back.png);
+    background-size: contain;
+
+    padding: 10px;
+}
+
+.forward {
+    width: 30px;
+    aspect-ratio: 1 / 1;
+
+    background-image: url(/forward.png);
+    background-size: contain;
+
+    padding: 10px;
+}
+
+/*Scrollbar*/
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    /* margin-top: 25px;
+    margin-bottom: 25px; */
+    visibility: 0;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+}
