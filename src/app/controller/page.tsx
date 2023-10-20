@@ -216,6 +216,12 @@ const MapNode = ({ data, side }: { data: MapState | null; side?: SIDE }) => {
                 <div className="artist">{data.artist}</div>
                 <div className={`type ${data.type === CHART_DIFF.RE_MASTER ? "REMAS" : data.type}`}>{data.type}</div>
             </div>
+            <div
+                className="version"
+                style={{
+                    backgroundImage: `url(/${data.version}.png)`,
+                }}
+            ></div>
             <div className="level">
                 Lv<span>{data.lvl}</span>
             </div>
