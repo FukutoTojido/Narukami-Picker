@@ -293,6 +293,8 @@ const Page = () => {
             if (popout) modelRef.current.showModal();
             else modelRef.current.close();
         }
+
+        if (popout) searchRef.current?.focus();
     }, [popout]);
 
     useEffect(() => {
@@ -577,14 +579,18 @@ const Page = () => {
                                     const clone = structuredClone(controllerState);
 
                                     clone.maps.random = currentMapList
-                                        .filter(
-                                            (map) =>
-                                                !controllerState.maps.bans.left.some((banMap) => banMap?.title === map.title) &&
-                                                !controllerState.maps.bans.right.some((banMap) => banMap?.title === map.title) &&
-                                                controllerState.maps.picks.left?.title !== map.title &&
-                                                controllerState.maps.picks.right?.title !== map.title 
-                                        )
-                                        .sort((ele) => 0.5 - Math.random())[Math.floor(currentMapList.length * Math.random())];
+                                        .filter((map) => {
+                                            const bool =
+                                                (!controllerState.maps.bans.left.some((banMap) => banMap?.title === map.title) ?? true) &&
+                                                (!controllerState.maps.bans.right.some((banMap) => banMap?.title === map.title) ?? true) &&
+                                                (controllerState.maps.picks.left?.title !== map.title ?? true) &&
+                                                (controllerState.maps.picks.right?.title !== map.title ?? true);
+
+                                            return bool;
+                                        })
+                                        .sort((ele) => 0.5 - Math.random())[0];
+
+                                    console.log(clone.maps.random);
 
                                     controllerDispatcher({
                                         type: ACTION_TYPE.SET_MAP,
@@ -658,6 +664,8 @@ const Page = () => {
                                     onClick={() => {
                                         setPopout(false);
                                         setCurrentSelected(null);
+                                        setSearchTerm("");
+                                        if (searchRef.current) searchRef.current.value = "";
                                     }}
                                 >
                                     <div className="closeButton"></div>
@@ -674,7 +682,17 @@ const Page = () => {
                                     }
                                 }}
                             />
-                            <PageContext.Provider value={{ controllerState, controllerDispatcher, currentSelected, setCurrentSelected, setPopout }}>
+                            <PageContext.Provider
+                                value={{
+                                    controllerState,
+                                    controllerDispatcher,
+                                    currentSelected,
+                                    setCurrentSelected,
+                                    setPopout,
+                                    setSearchTerm,
+                                    searchRef,
+                                }}
+                            >
                                 <Pagination list={currentMapList} />
                             </PageContext.Provider>
                         </div>
@@ -686,7 +704,8 @@ const Page = () => {
 };
 
 const Pagination = ({ list }: { list: MapState[] }) => {
-    const { controllerState, controllerDispatcher, currentSelected, setCurrentSelected, setPopout } = useContext(PageContext);
+    const { controllerState, controllerDispatcher, currentSelected, setCurrentSelected, setPopout, setSearchTerm, searchRef } =
+        useContext(PageContext);
     const [page, setPage] = useState(0);
     const [segmentedList, setSegmentedList] = useState<MapState[]>([]);
 
@@ -731,7 +750,9 @@ const Pagination = ({ list }: { list: MapState[] }) => {
                                 });
 
                                 setCurrentSelected(null);
+                                setSearchTerm("");
                                 setPopout(false);
+                                if (searchRef.current) searchRef.current.value = "";
                             }}
                         >
                             <MapNode data={mapData} />
