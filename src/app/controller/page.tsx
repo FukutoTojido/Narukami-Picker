@@ -226,13 +226,6 @@ const MapNode = ({ data, side }: { data: MapState | null; side?: SIDE }) => {
     );
 };
 
-export const metadata: Metadata = {
-    title: "Narukami Controller",
-    description: "Master Controller for Narukami Tournament",
-    viewport: "width=device-width, initial-scale=1",
-    icons: "../Logo.svg",
-};
-
 const PageContext = createContext<any>(null);
 
 const Page = () => {
