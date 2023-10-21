@@ -125,6 +125,8 @@ video {
 .label {
     font-weight: 600;
     font-size: 18px;
+
+    z-index: 9999999999;
 }
 
 .list {
