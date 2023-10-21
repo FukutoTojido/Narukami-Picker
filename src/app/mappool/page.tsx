@@ -211,8 +211,8 @@ const Page = () => {
                     </div>
                     <div className="label">Chiếc nón kì diệu 🥳</div>
                     <div className="wrapper">
-                        {mappoolState.maps.random.map((map) => {
-                            return <MapNode data={map} />;
+                        {mappoolState.maps.random.map((map, idx) => {
+                            return <MapNode data={map} key={idx} />;
                         })}
                     </div>
                 </div>
