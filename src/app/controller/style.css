@@ -467,6 +467,15 @@
     background-image: linear-gradient(-90deg, #3aa6f244 20%, rgba(0 0 0 / 0.7));
 }
 
+button.wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+button.wrapper .mapNode {
+    flex: 1;
+}
+
 .mapNode {
     position: relative;
 

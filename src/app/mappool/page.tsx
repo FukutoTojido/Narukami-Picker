@@ -26,21 +26,25 @@ const roundList = [
     {
         name: "Round of 16",
         nBans: 1,
+        nRands: 1,
         limit: ["12+", "13"],
     },
     {
         name: "Quarter Finals",
         nBans: 1,
+        nRands: 1,
         limit: ["13", "13+"],
     },
     {
         name: "Semi Finals",
         nBans: 2,
+        nRands: 2,
         limit: ["13+", "14"],
     },
     {
         name: "Finals",
         nBans: 2,
+        nRands: 1,
         limit: ["14", "14+"],
     },
 ];
@@ -59,7 +63,7 @@ const initialState: MappoolState = {
             left: null,
             right: null,
         },
-        random: null,
+        random: [null],
         secret: null,
     },
     picked: {
@@ -81,7 +85,7 @@ const reducer = (state: MappoolState, action: Action) => {
                     left: null,
                     right: null,
                 },
-                random: null,
+                random: [...Array(roundList[state.round].nRands)].map(() => null),
                 secret: null,
             };
             state.picked = initialState.picked;
@@ -206,7 +210,11 @@ const Page = () => {
                         </div>
                     </div>
                     <div className="label">Chiếc nón kì diệu 🥳</div>
-                    <MapNode data={mappoolState.maps.random} />
+                    <div className="wrapper">
+                        {mappoolState.maps.random.map((map) => {
+                            return <MapNode data={map} />;
+                        })}
+                    </div>
                 </div>
             </div>
         </>

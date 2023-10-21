@@ -152,7 +152,7 @@ interface BanPickState {
         left: MapState | null;
         right: MapState | null;
     };
-    random: MapState | null;
+    random: MapState[] | null[];
     secret?: MapState | null;
 }
 
@@ -175,7 +175,7 @@ interface SetMap {
             left: MapState | null;
             right: MapState | null;
         };
-        random: MapState | null;
+        random: MapState[] | null[];
         secret?: MapState | null;
     };
 }

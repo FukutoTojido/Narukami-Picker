@@ -19,21 +19,25 @@ const roundList = [
     {
         name: "Round of 16",
         nBans: 1,
+        nRands: 1,
         limit: ["12+", "13"],
     },
     {
         name: "Quarter Finals",
         nBans: 1,
+        nRands: 1,
         limit: ["13", "13+"],
     },
     {
         name: "Semi Finals",
         nBans: 2,
+        nRands: 2,
         limit: ["13+", "14"],
     },
     {
         name: "Finals",
         nBans: 2,
+        nRands: 1,
         limit: ["14", "14+"],
     },
 ];
@@ -113,7 +117,7 @@ const initialState: ControllerState = {
             left: null,
             right: null,
         },
-        random: null,
+        random: [null],
         secret: null,
     },
     state: {
@@ -149,7 +153,7 @@ const reducer = (state: ControllerState, action: Action) => {
                         left: null,
                         right: null,
                     },
-                    random: null,
+                    random: [...Array(roundList[action.data].nRands)].map(() => null),
                     secret: null,
                 },
             };
@@ -181,7 +185,7 @@ const reducer = (state: ControllerState, action: Action) => {
                         left: null,
                         right: null,
                     },
-                    random: null,
+                    random: [...Array(roundList[state.round].nRands)].map(() => null),
                     secret: null,
                 },
             };
@@ -504,12 +508,12 @@ const Page = () => {
                             </div>
                             <div className="label">Random</div>
                             <button
-                                className={`${mm.className} wrapper`}
+                                className={`${mm.className} wrapper list`}
                                 onContextMenu={(event) => {
                                     event.preventDefault();
                                     const clone = structuredClone(controllerState);
 
-                                    clone.maps.random = null;
+                                    clone.maps.random = [...Array(roundList[controllerState.round].nRands)].map(() => null);
 
                                     controllerDispatcher({
                                         type: ACTION_TYPE.SET_MAP,
@@ -517,7 +521,9 @@ const Page = () => {
                                     });
                                 }}
                             >
-                                <MapNode data={controllerState.maps.random} />
+                                {controllerState.maps.random.map((map, idx) => {
+                                    return <MapNode data={map} key={idx} />;
+                                })}
                             </button>
                         </div>
                     </div>
@@ -588,7 +594,8 @@ const Page = () => {
 
                                             return bool;
                                         })
-                                        .sort((ele) => 0.5 - Math.random())[0];
+                                        .sort((ele) => 0.5 - Math.random())
+                                        .slice(0, roundList[controllerState.round].nRands);
 
                                     console.log(clone.maps.random);
 
