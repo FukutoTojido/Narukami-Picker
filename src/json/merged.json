@@ -21716,36 +21716,6 @@
         }
     },
     {
-        "artist": "お月さま交響曲",
-        "catcode": "maimai",
-        "dx_lev_bas": "5",
-        "dx_lev_adv": "8",
-        "dx_lev_exp": "12",
-        "dx_lev_mas": "14+",
-        "dx_lev_remas": null,
-        "image_url": "f340a4081d9c66d7.png",
-        "release": "000000",
-        "lev_bas": null,
-        "lev_adv": null,
-        "lev_exp": null,
-        "lev_mas": null,
-        "lev_remas": null,
-        "sort": "762",
-        "title": "Regulus",
-        "title_kana": "REGULUS",
-        "version": "Splash",
-        "idx": {
-            "dx": "723f3228c173a54e0ee82d3491d6230325090c5420460eae8e0fc08fcd533944492531cd31d4f0ba7daa863ad25d61bf34aa8f8d3a6aa302f25e564655ff5ef8kkVNDlRTXgT5RNMGpbJqx40ymokbPp19PsutpVthDZs%3D",
-            "sta": null
-        },
-        "name": {
-            "orig": "Regulus",
-            "romaji": "Regulus",
-            "eng": "Regulus",
-            "alias": null
-        }
-    },
-    {
         "artist": "雄之助 feat. Sennzai",
         "catcode": "maimai",
         "dx_lev_bas": "3",
@@ -24755,38 +24725,6 @@
         }
     },
     {
-        "artist": "owl＊tree feat.chi＊tree",
-        "catcode": "maimai",
-        "dx_lev_bas": "6",
-        "dx_lev_adv": "8+",
-        "dx_lev_exp": "13",
-        "dx_lev_mas": "14+",
-        "dx_lev_remas": null,
-        "image_url": "d394210103ee76c3.png",
-        "release": "000000",
-        "lev_bas": null,
-        "lev_adv": null,
-        "lev_exp": null,
-        "lev_mas": null,
-        "lev_remas": null,
-        "sort": "860",
-        "title": "Valsqotch",
-        "title_kana": "VALSQOTCH",
-        "version": "maimai DX PLUS",
-        "idx": {
-            "dx": "6dd1d36ed4bcaa2a0e030cc3633861923d642cd8551c0ad2b1765ee40367fe5718dd1349611fffb333ffb4ef43598940fab0a5ad47e85d5bc2191c58f4692a74sZCuMXHqVQiC4Zm5QE1zmuPxz7kjQwLjVR14nW7jHT8%3D",
-            "sta": null
-        },
-        "name": {
-            "orig": "Valsqotch",
-            "romaji": "Valsqotch",
-            "eng": "Valsqotch",
-            "alias": [
-                "valsq"
-            ]
-        }
-    },
-    {
         "artist": "owl＊tree",
         "catcode": "maimai",
         "dx_lev_bas": "2",
@@ -25272,45 +25210,6 @@
                 "metamorphosis",
                 "metamorphism",
                 "meta"
-            ]
-        }
-    },
-    {
-        "artist": "Frums",
-        "catcode": "maimai",
-        "dx_lev_bas": "4",
-        "dx_lev_adv": "8",
-        "dx_lev_exp": "13",
-        "dx_lev_mas": "14+",
-        "dx_lev_remas": null,
-        "image_url": "6c38d19035bd1ea6.png",
-        "release": "000000",
-        "lev_bas": null,
-        "lev_adv": null,
-        "lev_exp": null,
-        "lev_mas": null,
-        "lev_remas": null,
-        "sort": "865",
-        "title": "チューリングの跡",
-        "title_kana": "チユウリンクノアト",
-        "version": "UNiVERSE PLUS",
-        "idx": {
-            "dx": "2ff7c4a73b0f178afe6712b88108abca28bc316d28d8c043024f8f6059c37fdd5d6002875e6cb270817dfa3f83a4f9851b06f8e9c6f3c75119307c24cd3863a0pWHudfPdvePGjBTeBJMlG0led5y8jKXQov8HX9t%2B3xs%3D",
-            "sta": null
-        },
-        "name": {
-            "orig": "チューリングの跡",
-            "romaji": "churingunoato",
-            "eng": "Trace of Turing",
-            "alias": [
-                "Turing's Trace",
-                "Turing's Traces",
-                "Turing's Remnants",
-                "Remnants of Turing",
-                "Traces of Turing",
-                "Trace of Turing",
-                "Turing",
-                "turing trace"
             ]
         }
     },
@@ -27082,38 +26981,6 @@
         "dx_lev_exp": null,
         "dx_lev_mas": null,
         "dx_lev_remas": null,
-        "image_url": "0c142b42f0e37845.png",
-        "release": "000000",
-        "lev_bas": "7",
-        "lev_adv": "10",
-        "lev_exp": "13",
-        "lev_mas": "14+",
-        "lev_remas": null,
-        "sort": "910",
-        "title": "Glorious Crown",
-        "title_kana": "GLORIOUSCROWN",
-        "version": "PiNK",
-        "idx": {
-            "dx": null,
-            "sta": "490896087970ac5e569b2d7f7326ba23ef0ba64b536153624fbd133124a89c68374317dc46fbd0235afc66cd49cafe04075b1110072668331ec9c8e87123831c3auOvM%2Flr5byDQ38jwpeWFJnLg1ZCDMW4WTqDpH3uOA%3D"
-        },
-        "name": {
-            "orig": "Glorious Crown",
-            "romaji": "Glorious Crown",
-            "eng": "Glorious Crown",
-            "alias": [
-                "gc"
-            ]
-        }
-    },
-    {
-        "artist": "xi",
-        "catcode": "maimai",
-        "dx_lev_bas": null,
-        "dx_lev_adv": null,
-        "dx_lev_exp": null,
-        "dx_lev_mas": null,
-        "dx_lev_remas": null,
         "image_url": "3982693e19e7ee22.png",
         "release": "000000",
         "lev_bas": "6",
@@ -27322,41 +27189,6 @@
         }
     },
     {
-        "artist": "BlackYooh vs. siromaru",
-        "catcode": "maimai",
-        "dx_lev_bas": "6",
-        "dx_lev_adv": "8",
-        "dx_lev_exp": "12+",
-        "dx_lev_mas": "14+",
-        "dx_lev_remas": null,
-        "image_url": "fed702195b5af0e7.png",
-        "release": "000000",
-        "lev_bas": null,
-        "lev_adv": null,
-        "lev_exp": null,
-        "lev_mas": null,
-        "lev_remas": null,
-        "sort": "919",
-        "title": "GIGANTØMAKHIA",
-        "title_kana": "GIGANTOMAKHIA",
-        "version": "UNiVERSE",
-        "idx": {
-            "dx": "ff65d6da71cd67f61948ff1eb429e05a542001d235b793eeadd6d7a69967e754787234b328af05f7aec412d16837f9c8e5b95ee86e20775529b78612692939792ou%2BZMMmb2HEwhWtoQA%2BEbTJL%2Bfw488x3m4%2BnrRYEDA%3D",
-            "sta": null
-        },
-        "name": {
-            "orig": "GIGANTØMAKHIA",
-            "romaji": "GIGANTØMAKHIA",
-            "eng": "GIGANTØMAKHIA",
-            "alias": [
-                "giganto",
-                "gigantot",
-                "GIGANTOMAKHIA",
-                "gigantomachia"
-            ]
-        }
-    },
-    {
         "artist": "BlackY vs. WAiKURO",
         "catcode": "maimai",
         "dx_lev_bas": "6",
@@ -27517,42 +27349,6 @@
             "alias": [
                 "emperror",
                 "emp"
-            ]
-        }
-    },
-    {
-        "artist": "sasakure.UK",
-        "catcode": "maimai",
-        "dx_lev_bas": null,
-        "dx_lev_adv": null,
-        "dx_lev_exp": null,
-        "dx_lev_mas": null,
-        "dx_lev_remas": null,
-        "image_url": "0c110a5873857c5f.png",
-        "release": "000000",
-        "lev_bas": "6",
-        "lev_adv": "8+",
-        "lev_exp": "13",
-        "lev_mas": "14",
-        "lev_remas": "14+",
-        "sort": "927",
-        "title": "ガラテアの螺旋",
-        "title_kana": "カラテアノラセン",
-        "version": "ORANGE PLUS",
-        "idx": {
-            "dx": null,
-            "sta": "69164be894e69cbd5d1702d53c8cc5e269d276c642f188c37376f0c1eebbb9423f7eff1f2d49fdbd84c883c1aae7b537af674f7aa9df37892306c2879fc7dd5067KgcTZ5HVccC5E2fVryiWy0R32MQJPn6kqNex5vu38%3D"
-        },
-        "name": {
-            "orig": "ガラテアの螺旋",
-            "romaji": "garateanorasen",
-            "eng": "Helix of Garatia",
-            "alias": [
-                "Helix of Garatia",
-                "helix",
-                "garatia",
-                "garatea",
-                "Garatea no Rasen"
             ]
         }
     },
