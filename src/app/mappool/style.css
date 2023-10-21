@@ -128,20 +128,18 @@ video {
 }
 
 .list {
-    & {
-        display: flex;
-        gap: 10px;
-    }
+    display: flex;
+    gap: 10px;
+}
 
-    .left,
-    .right {
-        flex: 1;
-        overflow: hidden;
+.list .left,
+.list .right {
+    flex: 1;
+    overflow: hidden;
 
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .left .mapNode {
@@ -153,7 +151,6 @@ video {
 }
 
 .banList .mapNode {
-
 }
 
 .countdown {
