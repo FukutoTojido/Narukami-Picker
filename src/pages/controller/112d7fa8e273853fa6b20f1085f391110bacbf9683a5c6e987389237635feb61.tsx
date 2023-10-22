@@ -150,7 +150,7 @@ const reducer = (state: ControllerState, action: Action) => {
     }
 };
 
-const WS_URL = "wss://express.satancraft.net:443/ws";
+const WS_URL = "";
 // const WS_URL = "ws://localhost:9727/ws";
 
 const Controller = () => {
